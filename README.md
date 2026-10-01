@@ -82,3 +82,82 @@ Desenvolver uma solução computacional capaz de auxiliar no registro, controle 
 | **Paulo Nambu** | Dev Team |
 | **Victor Andrade** | Dev Team |
 | **Ícaro Marcelo** | Dev Team |
+
+---
+
+## Diagramas
+
+Os principais diagramas do sistema estão disponíveis na documentação:
+
+- [Diagrama de Casos de Uso](docs/03-diagramas/casos-de-uso.png)
+- [Diagrama de Atividade](docs/03-diagramas/atividade.png)
+- [Diagrama Estendido](docs/03-diagramas/estendido.png)
+
+---
+
+## Estrutura do repositório
+
+```text
+docs/       → documentação e artefatos acadêmicos
+scrum/      → planejamento e acompanhamento ágil
+src/        → implementação do sistema
+database/   → estrutura e scripts do banco de dados
+assets/     → recursos visuais utilizados no projeto
+
+## Navegação rápida
+
+### Visão geral
+- [Problema e solução](docs/01-visao-geral/problema-e-solucao.md)
+- [Objetivos](docs/01-visao-geral/objetivos.md)
+- [Escopo](docs/01-visao-geral/escopo.md)
+- [Perfis de usuário](docs/01-visao-geral/perfis-de-usuario.md)
+- [Regras de negócio](docs/01-visao-geral/regras-de-negocio.md)
+
+### Engenharia de Software
+- [Requisitos funcionais](docs/02-engenharia-de-software/requisitos-funcionais.md)
+- [Requisitos não funcionais](docs/02-engenharia-de-software/requisitos-nao-funcionais.md)
+- [Casos de uso](docs/02-engenharia-de-software/casos-de-uso.md)
+- [Arquitetura](docs/02-engenharia-de-software/arquitetura.md)
+
+### Scrum
+- [Product Backlog](scrum/product-backlog.md)
+- [User Stories](scrum/user-stories.md)
+- [Definition of Done](scrum/definition-of-done.md)
+- [Sprints](scrum/sprints/)
+
+### Banco de Dados
+- [Documentação do banco](docs/04-banco-de-dados/)
+- [Scripts SQL](database/)
+
+### Programação em C
+- [Código-fonte](src/c/)
+
+### Pesquisa e Inovação
+- [Documentação](docs/05-pesquisa-e-inovacao/)
+
+### Redes
+- [Documentação](docs/06-redes/)
+
+### Direitos Humanos
+- [Documentação](docs/07-direitos-humanos/)
+
+### Documentação Final
+- [Entregas e backups](docs/08-documentacao-final/)
+
+---
+
+## Tecnologias e ferramentas
+
+- C
+- MySQL
+- Astah UML
+- Git
+- GitHub
+
+---
+
+## Instituição
+
+**Universidade Paulista — UNIP**  
+Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas  
+PIM II — 2026
