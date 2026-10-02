@@ -50,7 +50,7 @@ O projeto passou a ser desenvolvido considerando um problema real relacionado ao
 
 ---
 
-## Problema identificado
+## Problema identificado da organização
 
 Foi identificado que parte do processo relacionado ao controle de vendas e comissões dependia de atividades manuais e do uso de planilhas.
 
