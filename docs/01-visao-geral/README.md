@@ -19,7 +19,7 @@ Apresenta o objetivo geral e os objetivos específicos do projeto.
 [Ver objetivos](objetivos.md)
 
 ### Escopo
-Define o que faz parte do sistema e o que está fora do escopo do projeto hitek.
+Define o que faz parte do sistema e o que está fora do escopo do projeto.
 
 [Ver escopo](escopo.md)
 
