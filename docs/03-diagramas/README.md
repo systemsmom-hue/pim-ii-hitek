@@ -45,55 +45,6 @@ O diagrama também utiliza os relacionamentos `<<include>>` e `<<extend>>` quand
 
 ---
 
-## Diagrama de Atividade
-
-O Diagrama de Atividade representa o **fluxo principal da gestão de comissões**.
-
-O fluxo envolve quatro responsabilidades principais:
-
-- Vendedor;
-- Sistema;
-- Financeiro;
-- Administrador.
-
-De forma resumida:
-
-```text
-Registrar venda
-      ↓
-Comissão Pendente
-      ↓
-Verificar pagamento/faturamento
-      ↓
-Confirmar condições para baixa
-      ↓
-Calcular comissão
-      ↓
-Comissão Liberada
-      ↓
-Registrar pagamento
-      ↓
-Verificar quitação
-      ↓
-Comissão Paga
-```
-
-O diagrama também contempla:
-
-- venda faturada;
-- verificação da retirada do equipamento;
-- pagamento parcial;
-- manutenção da comissão como Liberada enquanto houver saldo;
-- geração de relatórios.
-
-### Visualização
-
-![Diagrama de Atividade](atividade.png)
-
-[Ver imagem em tamanho original](atividade.png)
-
----
-
 ## Diagrama Estendido
 
 O Diagrama Estendido apresenta a organização funcional do sistema por meio de módulos e suas respectivas funções.
