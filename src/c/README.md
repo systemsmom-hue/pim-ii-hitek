@@ -101,10 +101,25 @@ As seguintes funções já aparecem na modelagem funcional e poderão servir com
 ```text
 registrarVenda()
 consultarVenda()
+alterarSituacaoVenda()
+alterarValorVenda()
 calcularMargem()
 verificarMargem()
 alertarMargemBaixa()
 ```
+
+As funções:
+
+```text
+alterarSituacaoVenda()
+alterarValorVenda()
+```
+
+representam o refinamento que permite ao perfil Vendedor atualizar a situação da venda e alterar seu valor.
+
+O perfil Vendedor não poderá alterar o valor de custo da venda.
+
+---
 
 ### Financeiro
 
@@ -115,6 +130,10 @@ confirmarBaixa()
 verificarRetiradaEquipamento()
 ```
 
+Mesmo quando a situação da venda for atualizada pelo Vendedor, a confirmação da baixa continuará sendo responsabilidade do Financeiro.
+
+---
+
 ### Comissões
 
 ```text
@@ -123,6 +142,8 @@ consultarComissao()
 alterarStatusComissao()
 registrarAjusteComissao()
 ```
+
+---
 
 ### Usuários
 
@@ -134,6 +155,8 @@ consultarUsuario()
 autenticarUsuario()
 ```
 
+---
+
 ### Colaboradores
 
 ```text
@@ -141,6 +164,8 @@ cadastrarColaborador()
 editarColaborador()
 consultarColaborador()
 ```
+
+---
 
 ### Pagamentos
 
@@ -151,6 +176,8 @@ atualizarSaldoComissao()
 verificarQuitacaoComissao()
 ```
 
+---
+
 ### Relatórios
 
 ```text
@@ -159,12 +186,49 @@ gerarRelatorioComissoes()
 visualizarRelatorio()
 ```
 
+---
+
 ### Configurações
 
 ```text
 consultarPercentualComissao()
 configurarPercentualComissao()
 ```
+
+---
+
+## Permissões relacionadas às vendas
+
+Caso as funcionalidades de alteração da venda sejam selecionadas para implementação em C, deverão respeitar as mesmas regras definidas na documentação.
+
+### Vendedor
+
+Poderá:
+
+```text
+registrarVenda()
+consultarVenda()
+alterarSituacaoVenda()
+alterarValorVenda()
+```
+
+Não poderá:
+
+- alterar o valor de custo;
+- confirmar a baixa.
+
+### Financeiro
+
+Poderá executar as funções relacionadas à validação financeira:
+
+```text
+consultarVendas()
+verificarPagamentoFaturamento()
+verificarRetiradaEquipamento()
+confirmarBaixa()
+```
+
+A atualização realizada pelo Vendedor não deverá substituir a validação do Financeiro.
 
 ---
 
@@ -188,6 +252,7 @@ Venda paga ou faturada?
 Venda faturada?
 Equipamento retirado?
 Comissão quitada?
+Usuário possui permissão para executar a operação?
 ```
 
 A utilização definitiva dependerá das funcionalidades escolhidas.
@@ -255,6 +320,24 @@ A decisão será tomada durante o desenvolvimento.
 
 ---
 
+## Regras que deverão ser preservadas
+
+Caso as funcionalidades correspondentes sejam implementadas em C, deverão ser respeitadas regras como:
+
+- uma venda possuir apenas um colaborador responsável pela comissão;
+- a comissão iniciar como Pendente enquanto não atender às condições de liberação;
+- margem inferior a 30% gerar alerta sem bloquear a venda;
+- venda faturada depender da retirada do equipamento para liberação da comissão;
+- pagamentos parciais manterem a comissão como Liberada enquanto houver saldo;
+- quitação total alterar a comissão para Paga;
+- Vendedor poder atualizar a situação da venda;
+- Vendedor poder alterar o valor da venda;
+- Vendedor não poder alterar o valor de custo;
+- Vendedor não poder confirmar a baixa;
+- Financeiro permanecer responsável pela confirmação da baixa.
+
+---
+
 ## Testes
 
 As funcionalidades implementadas deverão ser testadas.
@@ -266,7 +349,11 @@ Os testes deverão verificar:
 - resultados dos cálculos;
 - funcionamento das repetições;
 - resultados esperados;
-- situações previstas pelas regras de negócio.
+- situações previstas pelas regras de negócio;
+- permissões dos perfis quando aplicável;
+- alteração do valor da venda quando implementada;
+- proteção do valor de custo contra alteração pelo Vendedor;
+- manutenção da responsabilidade do Financeiro pela baixa.
 
 ---
 
@@ -299,7 +386,18 @@ A parte de Programação Estruturada somente deverá ser considerada concluída 
 - o código compilar sem erros;
 - as funcionalidades estiverem testadas;
 - os resultados estiverem documentados;
-- houver coerência entre algoritmo, fluxograma, pseudocódigo e código C.
+- houver coerência entre algoritmo, fluxograma, pseudocódigo e código C;
+- as regras de negócio relacionadas às funcionalidades escolhidas estiverem respeitadas.
+
+---
+
+## Observação
+
+As funções listadas nesta documentação representam a **modelagem funcional atual** do sistema.
+
+Isso não significa que todas serão obrigatoriamente implementadas em C.
+
+A seleção definitiva deverá considerar as exigências da disciplina e o escopo definido pela equipe.
 
 ---
 
