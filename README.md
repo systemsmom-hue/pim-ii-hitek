@@ -90,7 +90,6 @@ Desenvolver uma solução computacional capaz de auxiliar no registro, controle 
 Os principais diagramas do sistema estão disponíveis na documentação:
 
 - [Diagrama de Casos de Uso](docs/03-diagramas/casos-de-uso.png)
-- [Diagrama de Atividade](docs/03-diagramas/atividade.png)
 - [Diagrama Estendido](docs/03-diagramas/estendido.png)
 
 ---
