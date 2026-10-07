@@ -32,7 +32,6 @@ Nessa pasta estão ou estarão:
 
 ```text
 casos-de-uso.png
-atividade.png
 estendido.png
 sistema-comissoes.asta
 ```
