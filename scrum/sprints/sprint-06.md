@@ -6,6 +6,8 @@ Nesta etapa, os artefatos desenvolvidos anteriormente começaram a ser centraliz
 
 Também foi iniciada a formalização da utilização do Scrum, organizando Product Backlog, User Stories, Definition of Done e o histórico das Sprints.
 
+Durante esta Sprint também foram realizados refinamentos no produto a partir de novas definições do Product Owner.
+
 > Esta Sprint corresponde à etapa atual de desenvolvimento do projeto.
 
 ---
@@ -18,7 +20,7 @@ Também foi iniciada a formalização da utilização do Scrum, organizando Prod
 
 ## Objetivo da Sprint
 
-Organizar os artefatos já desenvolvidos em um repositório GitHub e formalizar a documentação relacionada ao Scrum, mantendo coerência entre o histórico real do projeto e o estado atual das entregas.
+Organizar os artefatos já desenvolvidos em um repositório GitHub, formalizar a documentação relacionada ao Scrum e manter os artefatos do projeto atualizados conforme os refinamentos realizados durante o desenvolvimento.
 
 ---
 
@@ -55,6 +57,9 @@ Organizar os artefatos já desenvolvidos em um repositório GitHub e formalizar 
 | SP06-27 | Preparar a estrutura de scripts do banco de dados | ⚪ Pendente |
 | SP06-28 | Revisar todos os links internos do repositório | ⚪ Pendente |
 | SP06-29 | Realizar revisão geral da estrutura do GitHub | ⚪ Pendente |
+| SP06-30 | Registrar refinamento solicitado pelo Product Owner em 06/10/2026 | ✅ Concluído |
+| SP06-31 | Atualizar os artefatos afetados pelo refinamento do Product Owner | 🟡 Em andamento |
+| SP06-32 | Atualizar os diagramas finais no repositório | 🟡 Em andamento |
 
 ---
 
@@ -138,7 +143,6 @@ Reúne:
 Área destinada ao armazenamento de:
 
 - Diagrama de Casos de Uso;
-- Diagrama de Atividade;
 - Diagrama Estendido;
 - arquivos editáveis relacionados.
 
@@ -162,12 +166,15 @@ Reúne:
 
 ### 06 — Redes
 
-Área destinada à documentação futura de:
+Área destinada à documentação de:
 
 - topologia;
 - equipamentos;
 - endereçamento;
-- diagrama da rede.
+- infraestrutura;
+- acesso remoto;
+- segurança;
+- sistemas distribuídos.
 
 ### 07 — Direitos Humanos e Inclusão
 
@@ -214,7 +221,9 @@ Entre os itens registrados estão:
 - pagamentos;
 - quitação;
 - ajustes;
-- relatórios.
+- relatórios;
+- atualização da situação da venda pelo Vendedor;
+- alteração do valor da venda pelo Vendedor.
 
 Os itens ainda não implementados permanecem com status de planejamento.
 
@@ -231,6 +240,102 @@ Administrador
 ```
 
 As histórias foram relacionadas aos itens correspondentes do Product Backlog.
+
+Durante o refinamento desta Sprint, também foram incluídas histórias relacionadas a:
+
+- atualização da situação da venda pelo Vendedor;
+- alteração do valor da venda pelo Vendedor.
+
+---
+
+## Refinamento solicitado pelo Product Owner — 06/10/2026
+
+Durante a evolução do projeto, o Product Owner solicitou uma alteração nas permissões relacionadas ao perfil **Vendedor**.
+
+Foi definido que o Vendedor poderá:
+
+- atualizar a situação da venda;
+- informar ou atualizar a situação de pagamento/faturamento;
+- informar ou atualizar a situação de retirada do equipamento quando aplicável;
+- alterar o valor da venda.
+
+Também foi definido que o perfil Vendedor **não poderá alterar o valor de custo da venda**.
+
+---
+
+## Separação das responsabilidades
+
+A alteração não transfere ao Vendedor a responsabilidade de confirmação da baixa.
+
+O fluxo deverá permanecer com a seguinte separação:
+
+```text
+Vendedor atualiza a situação da venda
+        ↓
+Financeiro verifica as informações
+        ↓
+Financeiro confirma a baixa
+        ↓
+Sistema calcula e libera a comissão
+```
+
+Portanto:
+
+### Vendedor
+
+Poderá:
+
+- atualizar a situação da venda;
+- alterar o valor da venda.
+
+Não poderá:
+
+- alterar o valor de custo;
+- confirmar a baixa.
+
+### Financeiro
+
+Continuará responsável por:
+
+- verificar pagamento ou faturamento;
+- verificar retirada do equipamento quando aplicável;
+- confirmar a baixa da venda.
+
+---
+
+## Impacto do refinamento
+
+A decisão do Product Owner exige revisão de diferentes artefatos para manter a consistência do projeto.
+
+Os principais artefatos afetados são:
+
+```text
+Perfis de usuário
+        ↓
+Escopo
+        ↓
+Objetivos
+        ↓
+Regras de negócio
+        ↓
+Requisitos funcionais
+        ↓
+Casos de uso
+        ↓
+Diagramas
+        ↓
+Arquitetura
+        ↓
+Product Backlog
+        ↓
+User Stories
+        ↓
+Banco de dados
+        ↓
+Implementação
+```
+
+As alterações deverão representar a mesma regra em todos esses artefatos.
 
 ---
 
@@ -254,7 +359,7 @@ Foram definidos critérios específicos para:
 
 O histórico do projeto começou a ser organizado de acordo com a sequência real das atividades desenvolvidas.
 
-A estrutura definida até o momento é:
+A estrutura definida é:
 
 ```text
 Sprint 01 — Definição Inicial do Projeto
@@ -268,9 +373,19 @@ Sprint 04 — Refinamento das Regras e do Fluxo
 Sprint 05 — Consolidação da Modelagem Funcional
 
 Sprint 06 — Organização do GitHub e Formalização do Scrum
+
+Sprint 07 — Banco de Dados
+
+Sprint 08 — Programação Estruturada em C
+
+Sprint 09 — Disciplinas Complementares
+
+Sprint 10 — Integração e Entrega Final
 ```
 
-As próximas Sprints serão utilizadas para representar as etapas futuras do desenvolvimento.
+As Sprints anteriores preservam o histórico do que havia sido definido em cada etapa.
+
+Novas decisões não deverão ser inseridas retroativamente nas Sprints antigas como se já existissem naquele momento.
 
 ---
 
@@ -287,9 +402,11 @@ Modelagem inicial
         ↓
 Refinamento das regras
         ↓
-Consolidação dos diagramas
+Consolidação da modelagem funcional
         ↓
 Organização e versionamento no GitHub
+        ↓
+Refinamentos atuais do produto
 ```
 
 ---
@@ -303,13 +420,17 @@ Os commits deverão representar alterações específicas e identificáveis.
 Exemplos:
 
 ```text
-docs: adiciona regras de negócio
+docs: atualiza regras de negócio
 
-docs: adiciona diagrama de atividade
+docs: atualiza casos de uso
+
+docs: atualiza diagrama de casos de uso
 
 scrum: atualiza product backlog
 
-scrum: documenta sprint 06
+scrum: adiciona novas user stories
+
+scrum: registra refinamento do product owner
 
 db: adiciona modelo lógico
 
@@ -337,7 +458,7 @@ A utilização do repositório permite:
 
 ## Situação ao final da etapa atual
 
-Até o momento, o repositório já possui uma base documental organizada.
+O repositório possui uma base documental organizada.
 
 Estão estruturadas as áreas de:
 
@@ -360,8 +481,10 @@ A criação da estrutura não significa que as disciplinas correspondentes estej
 
 ## Principais pendências
 
-Após a conclusão desta Sprint, as principais etapas restantes serão:
+As principais etapas restantes incluem:
 
+- concluir a atualização dos artefatos afetados pelo refinamento do Product Owner;
+- garantir que os diagramas atuais estejam no repositório;
 - revisar e concluir o banco de dados;
 - desenvolver o modelo conceitual;
 - finalizar o DER;
@@ -371,8 +494,8 @@ Após a conclusão desta Sprint, as principais etapas restantes serão:
 - criar os scripts SQL;
 - selecionar as funcionalidades para implementação em C;
 - implementar e testar as funcionalidades em C;
-- desenvolver Pesquisa e Inovação;
-- desenvolver Redes;
+- concluir Pesquisa e Inovação;
+- concluir Redes;
 - desenvolver Direitos Humanos e Inclusão;
 - integrar todos os conteúdos ao documento final;
 - revisar a entrega completa.
@@ -387,9 +510,10 @@ Ao final desta Sprint, o projeto deverá possuir:
 - documentação existente organizada;
 - navegação entre os artefatos;
 - Product Backlog atualizado;
-- User Stories documentadas;
+- User Stories atualizadas;
 - Definition of Done definida;
 - histórico das Sprints organizado;
+- refinamentos atuais documentados;
 - áreas preparadas para as próximas etapas;
 - situação real do projeto claramente identificada.
 
