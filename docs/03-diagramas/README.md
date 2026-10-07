@@ -5,7 +5,6 @@ Esta seção reúne os principais diagramas desenvolvidos para o **Sistema de Ge
 Os diagramas representam diferentes perspectivas do sistema:
 
 - interação entre usuários e funcionalidades;
-- fluxo principal do processo de comissões;
 - organização dos módulos e funções do sistema.
 
 ---
@@ -24,8 +23,10 @@ Entre as principais funcionalidades representadas estão:
 
 - autenticação de usuário;
 - registro e consulta de vendas;
+- atualização da situação da venda pelo Vendedor;
+- alteração do valor da venda pelo Vendedor;
 - consulta de comissões;
-- confirmação de baixa;
+- confirmação de baixa pelo Financeiro;
 - registro de pagamento da comissão;
 - gerenciamento de usuários;
 - gerenciamento de colaboradores;
@@ -34,6 +35,10 @@ Entre as principais funcionalidades representadas estão:
 - gerenciamento de pagamentos;
 - geração de relatórios;
 - configuração do percentual de comissão.
+
+O Vendedor poderá atualizar a situação da venda e alterar o valor da venda, mas não poderá alterar o valor de custo.
+
+A atualização da situação da venda não substitui a validação realizada pelo Financeiro, que continua responsável pela confirmação da baixa.
 
 O diagrama também utiliza os relacionamentos `<<include>>` e `<<extend>>` quando aplicáveis.
 
@@ -61,6 +66,51 @@ Os módulos definidos são:
 - Configurações.
 
 O objetivo desse diagrama é representar como as principais funcionalidades do sistema estão organizadas e relacionadas.
+
+### Módulo Vendas
+
+Entre as funções representadas no módulo de Vendas estão:
+
+```text
+registrarVenda(): void
+consultarVenda(): void
+alterarSituacaoVenda(): void
+alterarValorVenda(): void
+calcularMargem(): void
+verificarMargem(): void
+alertarMargemBaixa(): void
+```
+
+As funções:
+
+```text
+alterarSituacaoVenda()
+alterarValorVenda()
+```
+
+foram incluídas para representar as novas permissões definidas para o perfil Vendedor.
+
+A alteração do valor de custo não está disponível para esse perfil.
+
+### Principais dependências
+
+As principais dependências entre os módulos são:
+
+```text
+VENDAS → COLABORADORES
+VENDAS → COMISSÕES
+
+FINANCEIRO → VENDAS
+FINANCEIRO → COMISSÕES
+FINANCEIRO → PAGAMENTOS
+
+COMISSÕES → CONFIGURAÇÕES
+
+PAGAMENTOS → COMISSÕES
+
+RELATÓRIOS → VENDAS
+RELATÓRIOS → COMISSÕES
+```
 
 ### Visualização
 
@@ -90,7 +140,6 @@ Esse arquivo permite abrir e editar os diagramas diretamente no Astah UML.
 03-diagramas/
 ├── README.md
 ├── casos-de-uso.png
-├── atividade.png
 ├── estendido.png
 └── sistema-comissoes.asta
 ```
@@ -103,9 +152,8 @@ Cada diagrama apresenta uma visão diferente do sistema:
 
 | Diagrama | Objetivo |
 |---|---|
-| Casos de Uso | Mostrar quem utiliza o sistema e quais funcionalidades pode executar |
-| Atividade | Mostrar como o processo principal acontece e em qual ordem |
-| Estendido | Mostrar como o sistema está organizado em módulos e funções |
+| Casos de Uso | Mostrar quem utiliza o sistema e quais funcionalidades cada ator pode executar |
+| Estendido | Mostrar como o sistema está organizado em módulos, funções e dependências |
 
 ---
 
