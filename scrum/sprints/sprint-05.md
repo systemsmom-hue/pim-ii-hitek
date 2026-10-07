@@ -76,7 +76,7 @@ O Diagrama de Casos de Uso foi revisado para representar de forma mais precisa a
 
 ### Vendedor
 
-Principais casos de uso:
+Principais casos de uso definidos nesta etapa:
 
 - Registrar Venda;
 - Consultar Vendas;
@@ -247,9 +247,9 @@ Paga
 
 ## Revisão do Diagrama de Atividade
 
-O Diagrama de Atividade também foi revisado para acompanhar as regras consolidadas.
+O Diagrama de Atividade também foi revisado nesta etapa para acompanhar as regras consolidadas.
 
-O fluxo principal passou a representar:
+O fluxo principal representava:
 
 ```text
 Registrar venda
@@ -280,6 +280,8 @@ Não            Sim
  ↓              ↓
 Liberada       Paga
 ```
+
+> O Diagrama de Atividade pertence ao histórico desta etapa do projeto. Posteriormente, ele deixou de fazer parte do conjunto atual de diagramas mantidos no repositório.
 
 ---
 
@@ -312,7 +314,7 @@ CONFIGURAÇÕES
 
 ## Módulo Vendas
 
-Principais funções:
+As principais funções definidas nesta etapa eram:
 
 ```text
 registrarVenda(): void
@@ -321,6 +323,8 @@ calcularMargem(): void
 verificarMargem(): void
 alertarMargemBaixa(): void
 ```
+
+> Este registro representa a versão existente na Sprint 05. O módulo VENDAS foi refinado posteriormente com novas funcionalidades definidas pelo Product Owner.
 
 ---
 
@@ -438,11 +442,11 @@ Essas relações indicam quais módulos utilizam informações ou funcionalidade
 
 ## Coerência entre os diagramas
 
-Ao final desta Sprint, os três principais diagramas passaram a representar diferentes perspectivas do mesmo sistema.
+Naquele momento do projeto, três diagramas eram utilizados para representar diferentes perspectivas do mesmo sistema.
 
 ### Diagrama de Casos de Uso
 
-Responde:
+Respondia:
 
 ```text
 Quem utiliza o sistema e o que pode fazer?
@@ -450,7 +454,7 @@ Quem utiliza o sistema e o que pode fazer?
 
 ### Diagrama de Atividade
 
-Responde:
+Respondia:
 
 ```text
 Como o processo acontece e em qual ordem?
@@ -458,11 +462,13 @@ Como o processo acontece e em qual ordem?
 
 ### Diagrama Estendido
 
-Responde:
+Respondia:
 
 ```text
 Como o sistema está organizado em módulos e funções?
 ```
+
+O conjunto atual de diagramas foi refinado posteriormente.
 
 ---
 
@@ -518,7 +524,6 @@ Ao final desta Sprint, ainda permaneciam como próximos trabalhos:
 - [Arquitetura](../../docs/02-engenharia-de-software/arquitetura.md)
 - [Regras de Negócio](../../docs/01-visao-geral/regras-de-negocio.md)
 - [Diagrama de Casos de Uso](../../docs/03-diagramas/casos-de-uso.png)
-- [Diagrama de Atividade](../../docs/03-diagramas/atividade.png)
 - [Diagrama Estendido](../../docs/03-diagramas/estendido.png)
 
 ---
