@@ -91,6 +91,8 @@ Principais atividades:
 - retirada do equipamento;
 - desenvolvimento e revisão do Diagrama de Atividade.
 
+> O Diagrama de Atividade fazia parte da modelagem utilizada nesta etapa histórica do projeto.
+
 [Ver Sprint 04](sprint-04.md)
 
 ---
@@ -111,6 +113,8 @@ Principais atividades:
 - desenvolvimento do Diagrama Estendido;
 - definição dos módulos e funções do sistema.
 
+> O Diagrama de Atividade ainda fazia parte dos artefatos utilizados naquele momento. Posteriormente, ele foi retirado do conjunto atual de diagramas do projeto.
+
 [Ver Sprint 05](sprint-05.md)
 
 ---
@@ -128,7 +132,16 @@ Principais atividades:
 - criação das User Stories;
 - definição da Definition of Done;
 - reconstrução do histórico das Sprints;
+- registro de refinamentos solicitados pelo Product Owner;
+- atualização dos artefatos afetados;
 - preparação das áreas para as próximas etapas.
+
+Entre os refinamentos registrados nesta etapa estão:
+
+- atualização da situação da venda pelo Vendedor;
+- alteração do valor da venda pelo Vendedor;
+- restrição de alteração do valor de custo para o perfil Vendedor;
+- manutenção da confirmação da baixa sob responsabilidade do Financeiro.
 
 **Status:** Em andamento
 
@@ -150,6 +163,16 @@ Principais atividades previstas:
 - scripts SQL;
 - análise de NoSQL;
 - validação da coerência entre banco e sistema.
+
+A modelagem deverá considerar as informações e regras atuais relacionadas às vendas, incluindo:
+
+- valor da venda;
+- valor de custo;
+- situação de pagamento ou faturamento;
+- situação de retirada;
+- confirmação da baixa;
+- comissões;
+- pagamentos.
 
 **Status:** Planejada
 
@@ -175,6 +198,8 @@ Principais atividades previstas:
 - matrizes;
 - testes;
 - documentação dos resultados.
+
+As funcionalidades selecionadas deverão utilizar como referência a versão atual dos requisitos, regras de negócio e do Diagrama Estendido.
 
 **Status:** Planejada
 
@@ -210,11 +235,19 @@ Principais atividades previstas:
 - revisão da estrutura do documento;
 - revisão de formatação;
 - revisão das citações e referências;
-- revisão de figuras e diagramas;
+- revisão das permissões dos perfis;
+- revisão dos diagramas atuais;
 - verificação de originalidade;
 - geração do DOCX final;
 - geração do PDF final;
 - preparação da entrega.
+
+O conjunto atual de diagramas de Engenharia de Software a ser considerado na revisão final é:
+
+```text
+Diagrama de Casos de Uso
+Diagrama Estendido
+```
 
 **Status:** Planejada
 
@@ -243,7 +276,7 @@ Sprint 05
 Consolidação da modelagem
         ↓
 Sprint 06
-GitHub e formalização do Scrum
+GitHub, Scrum e refinamentos atuais
         ↓
 Sprint 07
 Banco de Dados
@@ -257,6 +290,70 @@ Disciplinas complementares
 Sprint 10
 Integração e entrega final
 ```
+
+---
+
+## Artefatos históricos e atuais
+
+Alguns artefatos utilizados durante o desenvolvimento deixaram de fazer parte do conjunto atual do projeto.
+
+Isso não significa que seu histórico deva ser apagado das Sprints anteriores.
+
+### Histórico
+
+Nas Sprints 04 e 05 foi desenvolvido e revisado um:
+
+```text
+Diagrama de Atividade
+```
+
+Por representar uma etapa real da evolução do projeto, essas referências permanecem nos registros históricos.
+
+### Situação atual
+
+Atualmente, os diagramas de Engenharia de Software mantidos no projeto são:
+
+```text
+Diagrama de Casos de Uso
+Diagrama Estendido
+```
+
+O Diagrama de Atividade não faz mais parte do conjunto atual de diagramas mantidos no repositório.
+
+---
+
+## Preservação do histórico
+
+As Sprints concluídas devem representar aquilo que estava definido no momento em que cada etapa foi realizada.
+
+Por esse motivo, alterações posteriores não devem ser inseridas retroativamente nas Sprints antigas como se já existissem.
+
+Exemplo:
+
+```text
+Sprint 05
+Módulo VENDAS ainda não possuía:
+alterarSituacaoVenda()
+alterarValorVenda()
+
+        ↓
+
+Sprint 06
+Product Owner solicita o refinamento
+
+        ↓
+
+Versão atual
+Módulo VENDAS passa a possuir:
+alterarSituacaoVenda()
+alterarValorVenda()
+```
+
+Essa separação permite manter:
+
+- histórico fiel do desenvolvimento;
+- versão atual coerente;
+- rastreabilidade das mudanças.
 
 ---
 
