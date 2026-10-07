@@ -29,6 +29,9 @@ Desenvolver uma solução computacional capaz de auxiliar no registro, controle 
 ## Principais funcionalidades
 
 - Registro e consulta de vendas
+- Atualização da situação da venda pelo Vendedor
+- Alteração do valor da venda pelo Vendedor
+- Restrição da alteração do valor de custo para o perfil Vendedor
 - Cálculo e verificação de margem
 - Alerta para margem inferior a 30%
 - Cálculo automático de comissões
@@ -46,9 +49,19 @@ Desenvolver uma solução computacional capaz de auxiliar no registro, controle 
 
 | Perfil | Responsabilidades |
 |---|---|
-| **Vendedor** | Registrar vendas e consultar suas vendas e comissões |
-| **Financeiro** | Verificar pagamento/faturamento, confirmar baixas e registrar pagamentos |
+| **Vendedor** | Registrar e consultar suas vendas, atualizar a situação da venda, alterar o valor da venda e consultar suas comissões |
+| **Financeiro** | Verificar pagamento/faturamento e retirada quando aplicável, confirmar baixas e registrar pagamentos |
 | **Administrador** | Gerenciar usuários, colaboradores, vendas, comissões, pagamentos, configurações e relatórios |
+
+### Permissões do Vendedor
+
+O Vendedor poderá atualizar informações relacionadas à situação da venda, como pagamento/faturamento e retirada quando aplicável.
+
+Também poderá alterar o **valor da venda**.
+
+O perfil Vendedor **não poderá alterar o valor de custo**.
+
+A atualização dessas informações não substitui a validação do Financeiro, que continua responsável pela confirmação da baixa.
 
 ---
 
@@ -57,16 +70,16 @@ Desenvolver uma solução computacional capaz de auxiliar no registro, controle 
 | Etapa | Status |
 |---|---|
 | Problema, objetivos e escopo | ✅ Concluído |
-| Requisitos funcionais e não funcionais | ✅ Concluído |
-| Regras de negócio | ✅ Concluído |
-| Casos de Uso | ✅ Concluído |
-| Diagrama de Casos de Uso | ✅ Concluído |
-| Diagrama de Atividade | ✅ Concluído |
-| Diagrama Estendido | ✅ Concluído |
-| Product Backlog | 🟡 Em revisão |
+| Requisitos funcionais e não funcionais | ✅ Atualizado |
+| Regras de negócio | ✅ Atualizado |
+| Casos de Uso | ✅ Atualizado |
+| Diagrama de Casos de Uso | ✅ Atualizado |
+| Diagrama Estendido | ✅ Atualizado |
+| Product Backlog | ✅ Atualizado |
+| User Stories | ✅ Atualizado |
 | Banco de Dados | 🟡 Em desenvolvimento |
 | Programação Estruturada em C | 🟡 Em desenvolvimento |
-| Redes e Sistemas Distribuídos | ⚪ Pendente |
+| Redes e Sistemas Distribuídos | 🟡 Em desenvolvimento |
 | Direitos Humanos e Inclusão | ⚪ Pendente |
 | Documento final | 🟡 Em desenvolvimento |
 
