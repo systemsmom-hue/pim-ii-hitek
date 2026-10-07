@@ -27,11 +27,20 @@ O gerenciamento das vendas deverá possibilitar:
 - registrar uma venda;
 - consultar vendas;
 - associar a venda ao colaborador responsável;
-- registrar os valores necessários para o cálculo da margem;
+- registrar o valor da venda;
+- registrar o valor de custo;
 - calcular a margem da venda;
 - alertar quando a margem for inferior a 30%;
-- acompanhar a situação de pagamento ou faturamento;
+- permitir ao Vendedor atualizar a situação da venda;
+- permitir ao Vendedor alterar o valor da venda;
+- impedir que o perfil Vendedor altere o valor de custo;
+- registrar e acompanhar a situação de pagamento ou faturamento;
+- registrar e acompanhar a situação de retirada do equipamento, quando aplicável;
 - registrar informações relacionadas à baixa da venda.
+
+A atualização da situação da venda pelo Vendedor não substitui a validação do Financeiro.
+
+A confirmação da baixa deverá permanecer sob responsabilidade do perfil Financeiro.
 
 ---
 
@@ -112,6 +121,38 @@ Após a autenticação, o usuário deverá ter acesso somente às funcionalidade
 | RF04 | Gerar relatórios |
 | RF05 | Gerenciar pagamentos |
 | RF06 | Autenticar usuário |
+
+---
+
+## Relação com as permissões dos perfis
+
+### Vendedor
+
+No gerenciamento de vendas, o Vendedor poderá:
+
+- registrar venda;
+- consultar suas vendas;
+- atualizar a situação da venda;
+- alterar o valor da venda.
+
+O Vendedor não poderá:
+
+- alterar o valor de custo;
+- confirmar a baixa da venda.
+
+### Financeiro
+
+O Financeiro poderá:
+
+- consultar vendas;
+- verificar pagamento ou faturamento;
+- verificar retirada do equipamento quando aplicável;
+- confirmar a baixa;
+- registrar pagamentos das comissões.
+
+### Administrador
+
+O Administrador poderá realizar as operações administrativas e de gerenciamento previstas para seu perfil.
 
 ---
 
