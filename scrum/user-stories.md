@@ -56,6 +56,30 @@ O alerta não deverá impedir o registro.
 
 ---
 
+### US24 — Atualizar situação da venda
+
+Como **Vendedor**,  
+quero atualizar a situação da venda,  
+para manter registradas as informações de pagamento, faturamento e retirada quando aplicável.
+
+A atualização realizada pelo Vendedor não substituirá a validação realizada pelo Financeiro.
+
+O Vendedor não poderá utilizar essa funcionalidade para confirmar a baixa da venda.
+
+---
+
+### US25 — Alterar valor da venda
+
+Como **Vendedor**,  
+quero alterar o valor da venda,  
+para corrigir ou atualizar o valor comercial registrado quando necessário.
+
+O perfil Vendedor **não poderá alterar o valor de custo**.
+
+Quando o valor da venda for alterado, os cálculos relacionados à margem e à comissão deverão considerar o valor atualizado conforme as regras do sistema.
+
+---
+
 ## Financeiro
 
 ### US06 — Autenticar-se no sistema
@@ -80,6 +104,8 @@ Como **Financeiro**,
 quero verificar a situação de pagamento ou faturamento da venda,  
 para identificar se ela atende às condições necessárias para continuidade do processo.
 
+As informações poderão ter sido previamente atualizadas pelo Vendedor, mas deverão ser verificadas pelo Financeiro.
+
 ---
 
 ### US09 — Verificar retirada do equipamento
@@ -88,6 +114,8 @@ Como **Financeiro**,
 quero verificar a retirada do equipamento em vendas faturadas,  
 para confirmar se a comissão pode ser liberada.
 
+A situação de retirada poderá ter sido informada pelo Vendedor, mas deverá ser validada pelo Financeiro antes da baixa.
+
 ---
 
 ### US10 — Confirmar baixa da venda
@@ -95,6 +123,8 @@ para confirmar se a comissão pode ser liberada.
 Como **Financeiro**,  
 quero confirmar a baixa da venda,  
 para permitir que o sistema calcule e libere a comissão quando as condições necessárias forem atendidas.
+
+A confirmação da baixa continuará sendo uma responsabilidade exclusiva dos perfis autorizados para essa operação, não sendo realizada pelo Vendedor.
 
 ---
 
@@ -215,6 +245,8 @@ para acompanhar os valores e estados das comissões registradas.
 | US03 | PB05 |
 | US04 | PB07 |
 | US05 | PB06 |
+| US24 | PB17 |
+| US25 | PB18 |
 | US06 | PB01 |
 | US07 | PB05 |
 | US08 | PB09 |
@@ -233,6 +265,24 @@ para acompanhar os valores e estados das comissões registradas.
 | US21 | PB08 |
 | US22 | PB15 |
 | US23 | PB16 |
+
+---
+
+## Relação entre Vendedor e Financeiro
+
+O fluxo relacionado à atualização da situação da venda deverá respeitar a seguinte separação de responsabilidades:
+
+```text
+Vendedor atualiza a situação da venda
+        ↓
+Financeiro verifica as informações
+        ↓
+Financeiro confirma a baixa
+        ↓
+Comissão pode ser liberada
+```
+
+O Vendedor poderá alterar o **valor da venda**, mas não poderá alterar o **valor de custo**.
 
 ---
 
