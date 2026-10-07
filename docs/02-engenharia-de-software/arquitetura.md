@@ -50,9 +50,15 @@ Principais funções:
 
 - registrar venda;
 - consultar venda;
+- atualizar situação da venda;
+- alterar valor da venda;
 - calcular margem;
 - verificar margem;
 - alertar margem baixa.
+
+A alteração do valor de custo não estará disponível para o perfil Vendedor.
+
+A atualização da situação da venda pelo Vendedor também não substitui a validação realizada pelo Financeiro.
 
 ---
 
@@ -66,6 +72,8 @@ Principais funções:
 - verificar pagamento ou faturamento;
 - confirmar baixa;
 - verificar retirada do equipamento.
+
+O Financeiro continuará responsável pela confirmação da baixa, mesmo quando as informações da situação da venda forem atualizadas pelo Vendedor.
 
 ---
 
@@ -179,6 +187,8 @@ Vendedor registra a venda
         ↓
 Sistema registra comissão como Pendente
         ↓
+Vendedor pode atualizar a situação da venda
+        ↓
 Financeiro verifica pagamento ou faturamento
         ↓
 Condições para baixa são confirmadas
@@ -199,11 +209,59 @@ Não → Permanece Liberada
 
 Quando a venda for faturada, a retirada do equipamento deverá ser confirmada antes da liberação da comissão.
 
+A informação de retirada poderá ser atualizada pelo Vendedor, mas deverá ser verificada pelo Financeiro antes da confirmação da baixa.
+
+---
+
+## Alteração das informações da venda
+
+O módulo de Vendas deverá respeitar as permissões definidas para cada perfil.
+
+### Vendedor
+
+Poderá:
+
+```text
+registrarVenda()
+consultarVenda()
+alterarSituacaoVenda()
+alterarValorVenda()
+```
+
+Não poderá alterar o valor de custo nem confirmar a baixa.
+
+### Financeiro
+
+Será responsável pelas verificações necessárias para a confirmação da baixa:
+
+```text
+consultarVendas()
+verificarPagamentoFaturamento()
+verificarRetiradaEquipamento()
+confirmarBaixa()
+```
+
+Essa separação mantém a atualização operacional da venda e a validação financeira como responsabilidades distintas.
+
 ---
 
 ## Dados
 
 Os dados necessários ao funcionamento do sistema serão armazenados em banco de dados.
+
+O modelo de dados deverá contemplar as informações necessárias para representar:
+
+- usuários;
+- colaboradores;
+- vendas;
+- valor da venda;
+- valor de custo;
+- situação de pagamento ou faturamento;
+- situação de retirada;
+- comissões;
+- pagamentos;
+- configurações;
+- ajustes.
 
 O modelo de dados será detalhado na seção específica de Banco de Dados do projeto.
 
@@ -217,7 +275,11 @@ A disciplina de Programação Estruturada utilizará a linguagem **C** para impl
 
 Os arquivos de código-fonte serão organizados em:
 
-[src/c/](../../src/c/)
+```text
+src/c/
+```
+
+[Ver Programação em C](../../src/c/)
 
 ---
 
@@ -226,7 +288,6 @@ Os arquivos de código-fonte serão organizados em:
 A organização funcional do sistema também está representada pelos diagramas desenvolvidos no projeto:
 
 - Diagrama de Casos de Uso;
-- Diagrama de Atividade;
 - Diagrama Estendido.
 
 [Ver Diagramas](../03-diagramas/)
