@@ -16,7 +16,9 @@ Além das funcionalidades específicas de cada perfil, todos os usuários dever�
 
 ### Vendedor
 
-Responsável pelo registro das vendas e pelo acompanhamento de suas próprias vendas e comissões.
+Responsável pelo registro das vendas, atualização das informações permitidas da venda e acompanhamento de suas próprias vendas e comissões.
+
+O Vendedor poderá atualizar a situação da venda e alterar seu valor, mas não poderá alterar o valor de custo.
 
 ### Financeiro
 
@@ -83,6 +85,36 @@ Os principais estados são:
 ```text
 Pendente → Liberada → Paga
 ```
+
+---
+
+## UC15 — Atualizar Situação da Venda
+
+**Ator principal:** Vendedor
+
+Permite ao Vendedor atualizar informações relacionadas à situação da venda.
+
+Entre as informações que poderão ser atualizadas estão:
+
+- situação de pagamento;
+- situação de faturamento;
+- situação de retirada do equipamento, quando aplicável.
+
+A atualização realizada pelo Vendedor não substitui a validação do Financeiro.
+
+A confirmação da baixa da venda continuará sob responsabilidade do perfil Financeiro.
+
+---
+
+## UC16 — Alterar Valor da Venda
+
+**Ator principal:** Vendedor
+
+Permite ao Vendedor alterar o valor da venda registrada.
+
+O perfil Vendedor **não poderá alterar o valor de custo**.
+
+Quando a alteração do valor da venda afetar cálculos derivados, o sistema deverá considerar o valor atualizado conforme as regras de margem e comissão.
 
 ---
 
@@ -277,6 +309,8 @@ Os perfis disponíveis são:
 | UC01 | Registrar Venda | Vendedor |
 | UC02 | Consultar Vendas | Vendedor |
 | UC03 | Consultar Comissão | Vendedor |
+| UC15 | Atualizar Situação da Venda | Vendedor |
+| UC16 | Alterar Valor da Venda | Vendedor |
 | UC04 | Consultar Vendas | Financeiro |
 | UC05 | Confirmar Baixa da Venda | Financeiro |
 | UC06 | Registrar Pagamento da Comissão | Financeiro |
@@ -307,7 +341,29 @@ Os perfis disponíveis são:
 
 ---
 
-## Observação
+## Observação sobre o Vendedor
+
+A atualização da situação da venda pelo Vendedor representa o registro ou atualização das informações permitidas pelo seu perfil.
+
+Essa ação não significa que o Vendedor poderá confirmar a baixa.
+
+O fluxo permanece:
+
+```text
+Vendedor atualiza a situação da venda
+        ↓
+Financeiro verifica as informações
+        ↓
+Financeiro confirma a baixa
+        ↓
+Comissão pode ser liberada
+```
+
+O Vendedor também poderá alterar o valor da venda, mas não o valor de custo.
+
+---
+
+## Observação sobre autenticação
 
 Com exceção do caso de uso **Autenticar Usuário**, as funcionalidades do sistema pressupõem que o usuário já esteja autenticado e autorizado de acordo com seu perfil.
 
