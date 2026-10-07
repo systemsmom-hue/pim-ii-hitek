@@ -376,17 +376,56 @@ Deverão ser verificados:
 - fonte ou autoria;
 - coerência com a versão existente no GitHub.
 
-Os principais diagramas do projeto são:
+Os principais diagramas atualmente definidos para o projeto são:
 
 ```text
 Diagrama de Casos de Uso
-Diagrama de Atividade
 Diagrama Estendido
 DER
 Diagrama de Rede
 ```
 
-Os últimos dois serão incluídos quando forem efetivamente concluídos.
+O DER e o Diagrama de Rede serão incluídos quando forem efetivamente concluídos.
+
+O conjunto atual de diagramas de Engenharia de Software é composto por:
+
+```text
+Diagrama de Casos de Uso
+Diagrama Estendido
+```
+
+---
+
+# Revisão das permissões dos usuários
+
+Antes da entrega, deverá ser verificado se todos os artefatos representam corretamente as permissões atualmente definidas.
+
+### Vendedor
+
+Poderá:
+
+- registrar vendas;
+- consultar suas vendas;
+- consultar suas comissões;
+- atualizar a situação da venda;
+- alterar o valor da venda.
+
+Não poderá:
+
+- alterar o valor de custo;
+- confirmar a baixa da venda.
+
+### Financeiro
+
+Continuará responsável por:
+
+- consultar vendas;
+- verificar pagamento ou faturamento;
+- verificar retirada do equipamento quando aplicável;
+- confirmar a baixa;
+- registrar pagamentos das comissões.
+
+A atualização de informações pelo Vendedor não deverá substituir a validação realizada pelo Financeiro.
 
 ---
 
@@ -444,6 +483,15 @@ Documento final
 
 Caso exista uma alteração em uma área, deverá ser verificado se os demais artefatos também precisam ser atualizados.
 
+Também deverá ser conferido se:
+
+- as permissões dos perfis são iguais em todos os documentos;
+- os casos de uso correspondem às funcionalidades atuais;
+- o Diagrama Estendido corresponde às funções atuais;
+- o banco de dados suporta as informações necessárias;
+- a implementação corresponde às regras selecionadas;
+- os diagramas utilizados são as versões finais vigentes.
+
 ---
 
 # Entrega Final
@@ -477,6 +525,8 @@ A Sprint 10 somente poderá ser marcada como concluída quando:
 
 - todas as disciplinas estiverem integradas;
 - todos os principais artefatos estiverem concluídos;
+- requisitos, regras de negócio e casos de uso estiverem coerentes;
+- os diagramas finais estiverem atualizados;
 - banco de dados estiver coerente com o sistema;
 - implementação estiver documentada;
 - Redes estiver concluída;
@@ -486,6 +536,7 @@ A Sprint 10 somente poderá ser marcada como concluída quando:
 - formatação estiver revisada;
 - citações e referências estiverem conferidas;
 - figuras e diagramas estiverem revisados;
+- permissões dos perfis estiverem coerentes em todos os artefatos;
 - originalidade estiver conferida;
 - DOCX final estiver pronto;
 - PDF final estiver pronto;
