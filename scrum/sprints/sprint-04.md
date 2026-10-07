@@ -300,7 +300,6 @@ Ao final desta Sprint, ainda seriam trabalhados:
 - [Regras de Negócio](../../docs/01-visao-geral/regras-de-negocio.md)
 - [Perfis de Usuário](../../docs/01-visao-geral/perfis-de-usuario.md)
 - [Casos de Uso](../../docs/02-engenharia-de-software/casos-de-uso.md)
-- [Diagrama de Atividade](../../docs/03-diagramas/atividade.png)
 - [Diagramas](../../docs/03-diagramas/)
 
 ---
