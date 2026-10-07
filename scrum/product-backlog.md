@@ -26,6 +26,36 @@ Os itens abaixo foram definidos com base nos requisitos funcionais e nas regras 
 | PB14 | Ajustes de comissão | Permitir o registro de ajustes relacionados às comissões quando necessário. | Média | Planejado |
 | PB15 | Relatórios de vendas | Permitir ao Administrador gerar e visualizar relatórios relacionados às vendas. | Média | Planejado |
 | PB16 | Relatórios de comissões | Permitir ao Administrador gerar e visualizar relatórios relacionados às comissões. | Média | Planejado |
+| PB17 | Atualização da situação da venda | Permitir ao Vendedor atualizar informações da situação da venda, incluindo pagamento/faturamento e retirada quando aplicável. | Alta | Planejado |
+| PB18 | Alteração do valor da venda | Permitir ao Vendedor alterar o valor da venda, sem permitir a alteração do valor de custo. | Alta | Planejado |
+
+---
+
+## Regras relacionadas aos novos itens
+
+### PB17 — Atualização da situação da venda
+
+O Vendedor poderá atualizar informações relacionadas à situação da venda.
+
+Entre as informações previstas estão:
+
+- situação de pagamento;
+- situação de faturamento;
+- situação de retirada do equipamento, quando aplicável.
+
+A atualização realizada pelo Vendedor não substitui a validação do Financeiro.
+
+O Financeiro continuará responsável pela verificação das informações e pela confirmação da baixa.
+
+---
+
+### PB18 — Alteração do valor da venda
+
+O Vendedor poderá alterar o **valor da venda** quando necessário.
+
+O perfil Vendedor **não poderá alterar o valor de custo**.
+
+A alteração do valor da venda deverá ser considerada nos cálculos relacionados à margem e à comissão conforme as regras do sistema.
 
 ---
 
@@ -48,7 +78,7 @@ As prioridades poderão ser revistas conforme o andamento do projeto e as decis�
 | Requisito | Itens relacionados |
 |---|---|
 | RF01 — Gerenciar colaboradores | PB03 |
-| RF02 — Gerenciar vendas | PB04, PB05, PB06, PB09, PB10 |
+| RF02 — Gerenciar vendas | PB04, PB05, PB06, PB09, PB10, PB17, PB18 |
 | RF03 — Gerenciar comissões | PB07, PB08, PB14 |
 | RF04 — Gerar relatórios | PB15, PB16 |
 | RF05 — Gerenciar pagamentos | PB11, PB12, PB13 |
@@ -67,7 +97,9 @@ Cálculo e verificação da margem
       ↓
 Comissão Pendente
       ↓
-Verificação financeira
+Vendedor pode atualizar a situação da venda
+      ↓
+Financeiro verifica as informações
       ↓
 Confirmação da baixa
       ↓
@@ -82,6 +114,59 @@ Comissão Paga
 
 Em vendas faturadas, deverá ser confirmada a retirada do equipamento antes da liberação da comissão.
 
+A situação de retirada poderá ser atualizada pelo Vendedor, mas deverá ser verificada pelo Financeiro antes da confirmação da baixa.
+
+---
+
+## Separação de responsabilidades
+
+### Vendedor
+
+Relaciona-se principalmente aos itens:
+
+```text
+PB04
+PB05
+PB06
+PB07
+PB17
+PB18
+```
+
+O Vendedor poderá:
+
+- registrar vendas;
+- consultar suas vendas;
+- consultar suas comissões;
+- atualizar a situação da venda;
+- alterar o valor da venda.
+
+Não poderá:
+
+- alterar o valor de custo;
+- confirmar a baixa.
+
+### Financeiro
+
+Relaciona-se principalmente aos itens:
+
+```text
+PB05
+PB09
+PB10
+PB11
+PB12
+PB13
+```
+
+O Financeiro continuará responsável por:
+
+- verificar pagamento ou faturamento;
+- verificar retirada do equipamento quando aplicável;
+- confirmar a baixa;
+- registrar pagamentos das comissões;
+- acompanhar a quitação.
+
 ---
 
 ## Atualização do backlog
@@ -94,7 +179,7 @@ Quando uma funcionalidade avançar, seu status poderá ser alterado para:
 - Em desenvolvimento;
 - Concluído.
 
-Alterações de prioridade também poderão ser realizadas conforme as necessidades identificadas pela equipe.
+Alterações de prioridade também poderão ser realizadas conforme as necessidades identificadas pela equipe e as decisões do Product Owner.
 
 ---
 
