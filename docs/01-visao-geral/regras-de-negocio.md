@@ -16,9 +16,11 @@ Cada venda deverá possuir apenas **um colaborador responsável pela comissão**
 
 ---
 
-## RN03 — Confirmação da venda
+## RN03 — Confirmação da situação da venda
 
 A comissão dependerá da confirmação da situação da venda antes de ser liberada.
+
+O Vendedor poderá atualizar as informações permitidas da situação da venda, mas a verificação e a confirmação da baixa permanecerão sob responsabilidade do Financeiro.
 
 ---
 
@@ -91,6 +93,38 @@ Caso o equipamento ainda não tenha sido retirado, a comissão deverá permanece
 
 ---
 
+## RN12 — Atualização da situação da venda pelo Vendedor
+
+O Vendedor poderá atualizar informações relacionadas à situação da venda.
+
+Entre as informações que poderão ser atualizadas estão:
+
+- situação de pagamento;
+- situação de faturamento;
+- situação de retirada do equipamento, quando aplicável.
+
+A atualização realizada pelo Vendedor não substitui a validação realizada pelo Financeiro.
+
+---
+
+## RN13 — Alteração do valor da venda pelo Vendedor
+
+O Vendedor poderá alterar o **valor da venda** quando necessário.
+
+O perfil Vendedor **não poderá alterar o valor de custo da venda**.
+
+O valor de custo deverá permanecer protegido contra alterações não autorizadas por esse perfil.
+
+---
+
+## RN14 — Validação financeira
+
+A verificação das informações relacionadas ao pagamento, faturamento e retirada da venda deverá ser realizada pelo Financeiro antes da confirmação da baixa.
+
+Mesmo quando essas informações forem atualizadas pelo Vendedor, a responsabilidade pela confirmação da baixa continuará sendo do Financeiro.
+
+---
+
 ## Fluxo dos estados da comissão
 
 O fluxo principal dos estados da comissão é:
@@ -141,6 +175,66 @@ Liberada → Paga
 
 ---
 
+## Atualização da situação da venda
+
+As informações de pagamento/faturamento e retirada representam características da situação da venda.
+
+Essas informações deverão ser tratadas separadamente quando necessário.
+
+Exemplo:
+
+```text
+Situação de pagamento:
+- Paga
+- Não paga
+- Faturada
+
+Situação de retirada:
+- Retirada
+- Não retirada
+```
+
+Isso permite representar situações como:
+
+```text
+Faturada + Não retirada
+```
+
+e posteriormente:
+
+```text
+Faturada + Retirada
+```
+
+---
+
+## Permissões relacionadas à venda
+
+### Vendedor
+
+Poderá:
+
+- registrar venda;
+- consultar suas vendas;
+- atualizar a situação da venda;
+- alterar o valor da venda.
+
+Não poderá:
+
+- alterar o valor de custo;
+- confirmar a baixa da venda.
+
+### Financeiro
+
+Poderá:
+
+- consultar vendas;
+- verificar pagamento/faturamento;
+- verificar retirada do equipamento quando aplicável;
+- confirmar a baixa da venda.
+
+---
+
 ## Autenticação
 
 O acesso às funcionalidades do sistema dependerá da autenticação do usuário.
@@ -150,3 +244,7 @@ Após a autenticação, as funcionalidades disponíveis deverão respeitar o per
 - Vendedor;
 - Financeiro;
 - Administrador.
+
+---
+
+[← Voltar para Visão Geral](README.md)
