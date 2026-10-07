@@ -6,7 +6,7 @@ O objetivo é centralizar imagens auxiliares utilizadas na apresentação e docu
 
 ---
 
-## Uso da pasta
+## Uso da pastas
 
 Esta pasta poderá armazenar elementos como:
 
