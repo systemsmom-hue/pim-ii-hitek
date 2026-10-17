@@ -111,6 +111,23 @@ Após a autenticação, o usuário deverá ter acesso somente às funcionalidade
 
 ---
 
+## RF07 — Gerenciar usuários
+
+O sistema deverá permitir o gerenciamento dos usuários que terão acesso à aplicação.
+
+O gerenciamento deverá contemplar:
+
+- cadastrar usuário;
+- editar dados do usuário;
+- consultar usuários cadastrados;
+- bloquear usuários.
+
+O gerenciamento de usuários deverá permitir ao Administrador controlar os acessos à aplicação e os perfis associados aos usuários.
+
+As operações de gerenciamento de usuários deverão respeitar as permissões do perfil Administrador.
+
+---
+
 ## Resumo dos requisitos
 
 | Código | Requisito |
@@ -121,6 +138,7 @@ Após a autenticação, o usuário deverá ter acesso somente às funcionalidade
 | RF04 | Gerar relatórios |
 | RF05 | Gerenciar pagamentos |
 | RF06 | Autenticar usuário |
+| RF07 | Gerenciar usuários |
 
 ---
 
@@ -152,7 +170,17 @@ O Financeiro poderá:
 
 ### Administrador
 
-O Administrador poderá realizar as operações administrativas e de gerenciamento previstas para seu perfil.
+O Administrador poderá:
+
+- cadastrar, editar, consultar e bloquear usuários;
+- gerenciar colaboradores;
+- gerenciar vendas;
+- gerenciar comissões;
+- gerenciar pagamentos;
+- gerar relatórios;
+- configurar o percentual de comissão.
+
+As operações deverão respeitar as permissões definidas para o perfil.
 
 ---
 
