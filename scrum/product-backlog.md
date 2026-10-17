@@ -82,7 +82,8 @@ As prioridades poderão ser revistas conforme o andamento do projeto e as decis�
 | RF03 — Gerenciar comissões | PB07, PB08, PB14 |
 | RF04 — Gerar relatórios | PB15, PB16 |
 | RF05 — Gerenciar pagamentos | PB11, PB12, PB13 |
-| RF06 — Autenticar usuário | PB01, PB02 |
+| RF06 — Autenticar usuário | PB01 |
+| RF07 — Gerenciar usuários | PB02 |
 
 ---
 
@@ -90,25 +91,25 @@ As prioridades poderão ser revistas conforme o andamento do projeto e as decis�
 
 ```text
 Autenticação
-      ↓
+     ↓
 Registro da venda
-      ↓
+     ↓
 Cálculo e verificação da margem
-      ↓
+     ↓
 Comissão Pendente
-      ↓
+     ↓
 Vendedor pode atualizar a situação da venda
-      ↓
+     ↓
 Financeiro verifica as informações
-      ↓
+     ↓
 Confirmação da baixa
-      ↓
+     ↓
 Comissão Liberada
-      ↓
+     ↓
 Registro de pagamento
-      ↓
+     ↓
 Verificação de quitação
-      ↓
+     ↓
 Comissão Paga
 ```
 
