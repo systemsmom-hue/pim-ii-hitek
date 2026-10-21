@@ -30,17 +30,6 @@ A estrutura lógica do sistema organiza-se no seguinte fluxo de camadas:
 |          MySQL C API / Instruções SQL (CRUD)          |
 +-------------------------------------------------------+
 
-A organização lógica pode ser representada da seguinte forma:
-
-```text
-Usuários
-   ↓
-Funcionalidades do sistema
-   ↓
-Regras de negócio
-   ↓
-Dados do sistema
-```
 
 ---
 
