@@ -8,11 +8,11 @@ A implementação fará parte da disciplina de Programação Estruturada e dever
 
 ## Status
 
-**Planejado**
+**Em Andamento**
 
-A implementação em C ainda não foi iniciada.
+A implementação em C foi iniciada pela equipe.
 
-Antes da criação do código-fonte, serão selecionadas as funcionalidades mais adequadas para representação utilizando Programação Estruturada.
+Foram selecionadas as funcionalidades prioritárias do sistema e o desenvolvimento dos algoritmos, fluxogramas, pseudocódigos e código-fonte está em execução.
 
 ---
 
