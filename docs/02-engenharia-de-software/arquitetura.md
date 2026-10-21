@@ -29,7 +29,7 @@ A estrutura lógica do sistema organiza-se no seguinte fluxo de camadas:
 |        CAMADA DE ACESSO A DADOS (PERSISTÊNCIA)        |
 |          MySQL C API / Instruções SQL (CRUD)          |
 +-------------------------------------------------------+
-
+```
 
 ---
 
