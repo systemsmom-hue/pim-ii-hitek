@@ -77,11 +77,11 @@ A atualização dessas informações não substitui a validação do Financeiro,
 | Diagrama Estendido | ✅ Atualizado |
 | Product Backlog | ✅ Atualizado |
 | User Stories | ✅ Atualizado |
-| Banco de Dados | 🟡 Em desenvolvimento |
-| Programação Estruturada em C | 🟡 Em desenvolvimento |
-| Redes e Sistemas Distribuídos | 🟡 Em desenvolvimento |
-| Direitos Humanos e Inclusão | ⚪ Pendente |
-| Documento final | 🟡 Em desenvolvimento |
+| Banco de Dados | ✅ Atualizado |
+| Programação Estruturada em C | ✅ Atualizado |
+| Redes e Sistemas Distribuídos | ✅ Atualizado |
+| Direitos Humanos e Inclusão | ✅ Atualizado |
+| Documento final | ✅ Atualizado |
 
 ---
 
