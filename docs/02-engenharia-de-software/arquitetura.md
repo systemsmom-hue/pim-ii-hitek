@@ -8,7 +8,27 @@ A arquitetura detalhada de implementação ainda será refinada durante o desenv
 
 ## Visão geral
 
-O sistema será responsável por receber as ações dos usuários, aplicar as regras de negócio, registrar as informações e permitir consultas relacionadas ao processo de vendas e comissões.
+O sistema é responsável por capturar as interações dos utilizadores, processar as regras de negócio de vendas e comissões, gerir permissões por perfil e persistir as informações na base de dados relacional.
+
+A estrutura lógica do sistema organiza-se no seguinte fluxo de camadas:
+
+```text
++-------------------------------------------------------+
+|             CAMADA DE APRESENTAÇÃO (UI)               |
+|      Interface em Consola C (printf / scanf)          |
++-------------------------------------------------------+
+                           │
+                           ▼
++-------------------------------------------------------+
+|         CAMADA DE LÓGICA DE NEGÓCIO (DOMÍNIO)         |
+|     Cálculos, Validações, Regras e Autenticação       |
++-------------------------------------------------------+
+                           │
+                           ▼
++-------------------------------------------------------+
+|        CAMADA DE ACESSO A DADOS (PERSISTÊNCIA)        |
+|          MySQL C API / Instruções SQL (CRUD)          |
++-------------------------------------------------------+
 
 A organização lógica pode ser representada da seguinte forma:
 
