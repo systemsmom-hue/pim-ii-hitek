@@ -18,7 +18,7 @@ BIN_DIR = bin
 TARGET = $(BIN_DIR)/hitek_comissoes
 
 # Arquivos Fontes
-SRCS = main.c banco.c vendas.c financeiro.c administrador.c
+SRCS = main.c banco.c vendas.c financeiro.c administrador.c autenticacao.c calculos.c menus.c
 
 # Objetos Gerados
 OBJS = $(patsubst %.c, $(OBJ_DIR)/%.o, $(SRCS))
