@@ -105,17 +105,18 @@ Os principais diagramas do sistema estão disponíveis na documentação:
 
 - [Diagrama de Casos de Uso](docs/03-diagramas/casos-de-uso.png)
 - [Diagrama Estendido](docs/03-diagramas/estendido.png)
+- [Diagramas de Sequência (DS01 a DS04)](docs/03-diagramas/#diagramas-de-sequencia)
 
 ---
 
 ## Estrutura do repositório
 
 ```text
-docs/       → documentação e artefatos acadêmicos
-scrum/      → planejamento e acompanhamento ágil
-src/        → implementação do sistema (C)
-database/   → estrutura e scripts do banco de dados (MySQL)
-assets/     → recursos visuais utilizados no projeto
+docs/        → documentação e artefatos acadêmicos
+scrum/       → planejamento e acompanhamento ágil
+src/         → implementação do sistema (C)
+database/    → estrutura e scripts do banco de dados (MySQL)
+assets/      → recursos visuais utilizados no projeto
 ```
 
 ---
@@ -134,6 +135,7 @@ assets/     → recursos visuais utilizados no projeto
 - [Requisitos não funcionais](docs/02-engenharia-de-software/requisitos-nao-funcionais.md)
 - [Casos de uso](docs/02-engenharia-de-software/casos-de-uso.md)
 - [Arquitetura](docs/02-engenharia-de-software/arquitetura.md)
+- [Diagramas do sistema](docs/03-diagramas/)
 
 ### Scrum
 - [Product Backlog](scrum/product-backlog.md)
