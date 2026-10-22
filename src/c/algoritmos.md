@@ -1,188 +1,216 @@
-# 🛠️ Algoritmos e Pseudocódigo do Sistema em C
+# Algoritmos e Pseudocódigos - Sistema HiTek
 
-Este documento descreve os algoritmos e pseudocódigos das principais rotinas do **Sistema de Gestão de Comissões — Hitek Informática**, desenvolvido em Linguagem C com suporte à API `mysql.h`.
+Este documento contém a especificação dos principais algoritmos e pseudocódigos que regem a lógica de negócios da aplicação de Gestão de Vendas e Comissões do PIM II.
 
 ---
 
-## 1. Algoritmo 1: Autenticação de Usuário e Controle de Acesso (`autenticarUsuario`)
+## 1. Algoritmo de Autenticação de Usuários
 
-Este algoritmo valida as credenciais informadas pelo operador, recupera seu perfil e define o nível de permissão (RBAC - *Role-Based Access Control*).
-
-### Pseudocódigo
+**Descrição:** Valida as credenciais de acesso do colaborador, sanitizando as entradas contra *SQL Injection* e verificando se o perfil e status estão ativos.
 
 ```text
 ALGORITMO autenticarUsuario
-ENTRADA: login (texto), senha (texto)
-SAÍDA: id_usuario (inteiro), perfil (texto), sucesso (booleano)
+ENTRADAS: loginInformado (TEXTO), senhaInformada (TEXTO)
+SAÍDAS: usuarioAutenticado (ESTRUTURA Colaborador) OU NULO
 
 INÍCIO
-    EXIBIR "--- TELA DE LOGIN ---"
-    LER login
-    LER senha
-    
-    hash_senha <- GERAR_MD5(senha)
-    
-    sql_query <- "SELECT id_usuario, perfil, status FROM usuario WHERE login = 'login' AND senha_hash = 'hash_senha'"
-    resultado <- EXECUTAR_QUERY_MYSQL(sql_query)
-    
-    SE resultado POSSUI_REGISTRO ENTÃO
+    ESCREVER "Informe o Login:"
+    LER loginInformado
+    ESCREVER "Informe a Senha:"
+    LER senhaInformada
+
+    loginEscapado <- SANITIZAR_SQL(loginInformado)
+    senhaEscapada <- SANITIZAR_SQL(senhaInformada)
+
+    query <- "SELECT id_colaborador, nome, cargo, perfil, status 
+              FROM colaborador 
+              WHERE login = 'loginEscapado' AND senha = 'senhaEscapada'"
+
+    resultado <- EXECUTAR_SQL(query)
+
+    SE resultado EXISTE ENTÃO
         SE resultado.status = 'INATIVO' ENTÃO
-            EXIBIR "Usuário desativado. Entre em contato com o Administrador."
-            RETORNAR FALSO
+            ESCREVER "Acesso Negado: Usuário inativo no sistema."
+            RETORNAR NULO
         SENÃO
-            id_usuario <- resultado.id_usuario
-            perfil <- resultado.perfil
-            EXIBIR "Acesso concedido. Bem-vindo!"
-            REGISTRAR_LOG_ACESSO(id_usuario)
-            RETORNAR VERDADEIRO
+            ESCREVER "Autenticação realizada com sucesso! Bem-vindo, ", resultado.nome
+            RETORNAR resultado
         FIM_SE
     SENÃO
-        EXIBIR "Login ou senha incorretos."
-        RETORNAR FALSO
+        ESCREVER "Login ou senha inválidos."
+        RETORNAR NULO
     FIM_SE
 FIM
 ```
 
 ---
 
-## 2. Algoritmo 2: Cadastro de Venda e Cálculo da Comissão (`cadastrarVenda`)
+## 2. Algoritmo de Cadastro de Venda e Cálculo de Comissão
 
-Registra uma nova nota fiscal, verifica a margem de lucro e calcula automaticamente a comissão associada.
-
-### Pseudocódigo
+**Descrição:** Cadastra uma nova OS/Venda, calcula a margem de lucro e gera a comissão correspondente. Se a margem for inferior a 30%, exibe um alerta de atenção sem aplicar penalidades no valor da comissão.
 
 ```text
 ALGORITMO cadastrarVenda
-ENTRADA: id_colaborador (inteiro), numero_nf (texto), cliente (texto), valor_total (real), margem_lucro (real)
-SAÍDA: id_venda (inteiro), sucesso (booleano)
+ENTRADAS: idColaborador (INTEIRO), numeroOS (TEXTO), valorVenda (REAL), custo (REAL)
+SAÍDAS: Sucesso ou Falha no registro
 
 INÍCIO
-    SE valor_total <= 0 OU margem_lucro < 0 ENTÃO
-        EXIBIR "Erro: Valores de venda e margem devem ser positivos."
-        RETORNAR FALSO
+    ESCREVER "Informe o Número da OS:"
+    LER numeroOS
+
+    ESCREVER "Informe o Valor da Venda (R$):"
+    LER valorVenda
+
+    SE valorVenda <= 0 ENTÃO
+        ESCREVER "Erro: O valor da venda deve ser maior que zero."
+        RETORNAR FALHA
     FIM_SE
 
-    // Busca percentual padrão do colaborador
-    sql_colab <- "SELECT percentual_comissao FROM colaborador WHERE id_colaborador = id_colaborador AND status = 'ATIVO'"
-    colab_data <- EXECUTAR_QUERY_MYSQL(sql_colab)
+    ESCREVER "Informe o Custo do Equipamento/Serviço (R$):"
+    LER custo
 
-    SE NAO_ENCONTRADO(colab_data) ENTÃO
-        EXIBIR "Erro: Colaborador não localizado ou inativo."
-        RETORNAR FALSO
+    SE custo < 0 ENTÃO
+        ESCREVER "Erro: O custo não pode ser negativo."
+        RETORNAR FALHA
     FIM_SE
 
-    percentual_aplicado <- colab_data.percentual_comissao
+    // 1. Cálculo da Margem de Lucro (%)
+    margem <- ((valorVenda - custo) / valorVenda) * 100.0
 
-    // Regra de Negócio: Se a margem for menor que a mínima exigida, aplica fator de redução
-    margem_minima <- OBTER_CONFIGURACAO("MARGEM_MINIMA_COMISSAO") // Ex: 10%
-    SE margem_lucro < margem_minima ENTÃO
-        percentual_aplicado <- percentual_aplicado * 0.50 // Redução de 50% na comissão
+    // 2. Alerta de Margem Baixa (< 30%)
+    SE margem < 30.0 ENTÃO
+        ESCREVER "ALERTA INFORMATIVO: A margem de lucro (", margem, "%) está abaixo do mínimo recomendado (30%)."
     FIM_SE
 
-    valor_comissao <- valor_total * (percentual_aplicado / 100.0)
+    // 3. Obter percentual de comissão ativo na configuração global
+    percentualAtivo <- BUSCAR_CONFIGURACAO_ATUAL() // Padrão: 1.00%
 
-    // Início da Transação SQL
-    INICIAR_TRANSACAO_SQL()
+    // 4. Cálculo do valor bruto da comissão
+    valorComissao <- valorVenda * (percentualAtivo / 100.0)
 
-    sql_venda <- "INSERT INTO venda (id_colaborador, numero_nf, cliente, valor_total, margem_lucro, status_comissao) VALUES (id_colaborador, numero_nf, cliente, valor_total, margem_lucro, 'GERADA')"
-    id_venda <- EXECUTAR_INSERT_MYSQL(sql_venda)
+    // 5. Inserção na Tabela de Vendas
+    idVendaGerado <- EXECUTAR_SQL(
+        "INSERT INTO venda (id_colaborador, numero_os, valor_venda, custo, margem, status) 
+         VALUES (idColaborador, 'numeroOS', valorVenda, custo, margem, 'ATIVA')"
+    )
 
-    sql_comissao <- "INSERT INTO comissao (id_venda, id_colaborador, valor_base, percentual_aplicado, valor_comissao, status) VALUES (id_venda, id_colaborador, valor_total, percentual_aplicado, valor_comissao, 'PENDENTE')"
-    EXECUTAR_INSERT_MYSQL(sql_comissao)
+    // 6. Registro da Comissão associada (Status PENDENTE)
+    EXECUTAR_SQL(
+        "INSERT INTO comissao (id_venda, percentual_aplicado, valor_comissao, status, data_calculo) 
+         VALUES (idVendaGerado, percentualAtivo, valorComissao, 'PENDENTE', AGORA())"
+    )
 
-    SE AMBAS_OPERACIONALIZADAS_COM_SUCESSO ENTÃO
-        CONFIRMAR_TRANSACAO_SQL() // COMMIT
-        EXIBIR "Venda e comissão cadastradas com sucesso!"
-        RETORNAR VERDADEIRO
-    SENÃO
-        DESFAZER_TRANSACAO_SQL() // ROLLBACK
-        EXIBIR "Erro ao registrar venda no banco de dados."
-        RETORNAR FALSO
-    FIM_SE
+    ESCREVER "Venda cadastrada e comissão registrada com sucesso!"
+    ESCREVER "Valor da Comissão Gerada: R$ ", valorComissao
+    RETORNAR SUCESSO
 FIM
 ```
 
 ---
 
-## 3. Algoritmo 3: Liberação de Comissão pelo Financeiro (`liberarComissao`)
+## 3. Algoritmo de Validação e Liberação de Comissão
 
-Permite ao setor financeiro alterar o status de uma comissão de `PENDENTE` para `LIBERADA`.
-
-### Pseudocódigo
+**Descrição:** Verifica os critérios operacionais necessários para mudar o status de uma comissão de `PENDENTE` para `LIBERADA`.
 
 ```text
 ALGORITMO liberarComissao
-ENTRADA: id_comissao (inteiro), id_usuario_financeiro (inteiro)
-SAÍDA: sucesso (booleano)
+ENTRADAS: idVenda (INTEIRO)
+SAÍDAS: Atualização do status da comissão
 
 INÍCIO
-    sql_valida <- "SELECT status FROM comissao WHERE id_comissao = id_comissao"
-    comissao_data <- EXECUTAR_QUERY_MYSQL(sql_valida)
+    venda <- EXECUTAR_SQL("SELECT faturada, equipamento_retirado FROM venda WHERE id_venda = idVenda")
 
-    SE comissao_data.status != 'PENDENTE' ENTÃO
-        EXIBIR "Erro: Apenas comissões com status PENDENTE podem ser liberadas."
-        RETORNAR FALSO
+    SE venda NÃO ENCONTRADA ENTÃO
+        ESCREVER "Venda não localizada."
+        RETORNAR FALHA
     FIM_SE
 
-    sql_update <- "UPDATE comissao SET status = 'LIBERADA' WHERE id_comissao = id_comissao"
-    sucesso_update <- EXECUTAR_UPDATE_MYSQL(sql_update)
-
-    SE sucesso_update ENTÃO
-        EXIBIR "Comissão ID ", id_comissao, " liberada para pagamento com sucesso."
-        RETORNAR VERDADEIRO
+    // Regra de Liberação: Venda faturada (1) E equipamento retirado (1)
+    SE venda.faturada = 1 E venda.equipamento_retirado = 1 ENTÃO
+        EXECUTAR_SQL(
+            "UPDATE comissao 
+             SET status = 'LIBERADA', data_conferencia = AGORA() 
+             WHERE id_venda = idVenda AND status = 'PENDENTE'"
+        )
+        ESCREVER "Comissão liberada com sucesso para pagamento!"
+        RETORNAR SUCESSO
     SENÃO
-        EXIBIR "Falha ao atualizar status da comissão."
-        RETORNAR FALSO
+        ESCREVER "Condições não atingidas. A comissão permanece PENDENTE."
+        ESCREVER "Faturada: ", venda.faturada, " | Retirado: ", venda.equipamento_retirado
+        RETORNAR FALHA
     FIM_SE
 FIM
 ```
 
 ---
 
-## 4. Algoritmo 4: Baixa de Pagamento de Comissão (`registrarPagamento`)
+## 4. Algoritmo de Alteração do Percentual de Comissão (Administrador)
 
-Efetiva a quitação financeira de uma comissão previamente liberada, atualizando seu status para `PAGA`.
-
-### Pseudocódigo
+**Descrição:** Permite ao administrador atualizar a alíquota padrão global de comissão para novas vendas.
 
 ```text
-ALGORITMO registrarPagamento
-ENTRADA: id_comissao (inteiro), meio_pagamento (texto), comprovante (texto)
-SAÍDA: sucesso (booleano)
+ALGORITMO alterarPercentualComissao
+ENTRADAS: idAdministrador (INTEIRO), novoPercentual (REAL)
+SAÍDAS: Sucesso ou Falha
 
 INÍCIO
-    sql_comissao <- "SELECT valor_comissao, status FROM comissao WHERE id_comissao = id_comissao"
-    dados <- EXECUTAR_QUERY_MYSQL(sql_comissao)
+    ESCREVER "Informe o novo percentual de comissão (%):"
+    LER novoPercentual
 
-    SE dados.status != 'LIBERADA' ENTÃO
-        EXIBIR "Erro: A comissão precisa estar LIBERADA para receber pagamento."
-        RETORNAR FALSO
+    SE novoPercentual <= 0 OU novoPercentual > 100 ENTÃO
+        ESCREVER "Erro: O percentual deve ser maior que 0 e menor ou igual a 100."
+        RETORNAR FALHA
     FIM_SE
 
-    INICIAR_TRANSACAO_SQL()
+    ESCREVER "Confirma alterar o percentual para ", novoPercentual, "%? (1-Sim / 0-Não)"
+    LER confirmacao
 
-    sql_pagamento <- "INSERT INTO pagamento (id_comissao, valor_pago, meio_pagamento, comprovante_ref) VALUES (id_comissao, dados.valor_comissao, meio_pagamento, comprovante)"
-    EXECUTAR_INSERT_MYSQL(sql_pagamento)
-
-    sql_update_comissao <- "UPDATE comissao SET status = 'PAGA' WHERE id_comissao = id_comissao"
-    EXECUTAR_UPDATE_MYSQL(sql_update_comissao)
-
-    SE AMBAS_OK ENTÃO
-        CONFIRMAR_TRANSACAO_SQL()
-        EXIBIR "Pagamento de comissão registrado com sucesso!"
-        RETORNAR VERDADEIRO
+    SE confirmacao = 1 ENTÃO
+        EXECUTAR_SQL(
+            "INSERT INTO configuracao (percentual_atual, data_alteracao, id_administrador) 
+             VALUES (novoPercentual, AGORA(), idAdministrador)"
+        )
+        ESCREVER "Percentual global atualizado com sucesso para ", novoPercentual, "%!"
+        RETORNAR SUCESSO
     SENÃO
-        DESFAZER_TRANSACAO_SQL()
-        EXIBIR "Falha na transação de pagamento."
-        RETORNAR FALSO
+        ESCREVER "Alteração cancelada."
+        RETORNAR FALHA
     FIM_SE
 FIM
 ```
 
 ---
 
-## 📜 Documentação Relacionada
+## 5. Algoritmo de Ajuste/Desconto em Comissão
 
-* [Estrutura do Banco de Dados](../../docs/04-banco-de-dados/modelo-fisico.md)
-* [Scripts SQL](../../database/sql/README.md)
-* [Visão Geral do Projeto](../../docs/01-visao-geral/README.md)
+**Descrição:** Registra um abatimento ou desconto em uma comissão sem alterar seu valor original histórico.
+
+```text
+ALGORITMO registrarAjusteComissao
+ENTRADAS: idComissao (INTEIRO), valorDesconto (REAL), motivo (TEXTO)
+SAÍDAS: Registro na tabela desconto
+
+INÍCIO
+    comissao <- EXECUTAR_SQL("SELECT valor_comissao, status FROM comissao WHERE id_comissao = idComissao")
+
+    SE comissao.status = 'CANCELADA' ENTÃO
+        ESCREVER "Não é permitido registrar ajuste para comissão cancelada."
+        RETORNAR FALHA
+    FIM_SE
+
+    SE valorDesconto <= 0 OU valorDesconto > comissao.valor_comissao ENTÃO
+        ESCREVER "Erro: Valor do desconto inválido ou superior ao valor da comissão."
+        RETORNAR FALHA
+    FIM_SE
+
+    motivoEscapado <- SANITIZAR_SQL(motivo)
+
+    EXECUTAR_SQL(
+        "INSERT INTO desconto (id_comissao_origem, valor_desconto, motivo, data_registro, aplicado) 
+         VALUES (idComissao, valorDesconto, 'motivoEscapado', AGORA(), 0)"
+    )
+
+    ESCREVER "Ajuste de comissão registrado como PENDENTE DE APLICAÇÃO."
+    RETORNAR SUCESSO
+FIM
+```
