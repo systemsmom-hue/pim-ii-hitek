@@ -69,19 +69,20 @@ A atualização dessas informações não substitui a validação do Financeiro,
 
 | Etapa | Status |
 |---|---|
-| Problema, objetivos e escopo | ✅ Concluído |
-| Requisitos funcionais e não funcionais | ✅ Atualizado |
-| Regras de negócio | ✅ Atualizado |
-| Casos de Uso | ✅ Atualizado |
-| Diagrama de Casos de Uso | ✅ Atualizado |
-| Diagrama Estendido | ✅ Atualizado |
-| Product Backlog | ✅ Atualizado |
-| User Stories | ✅ Atualizado |
-| Banco de Dados | ✅ Atualizado |
-| Programação Estruturada em C | ✅ Atualizado |
-| Redes e Sistemas Distribuídos | ✅ Atualizado |
-| Direitos Humanos e Inclusão | ✅ Atualizado |
-| Documento final | ✅ Atualizado |
+| Problema, objetivos e escopo | Concluído |
+| Requisitos funcionais e não funcionais | Concluído |
+| Regras de negócio | Concluído |
+| Casos de Uso | Concluído |
+| Diagrama de Casos de Uso | Concluído |
+| Diagrama Estendido | Concluído |
+| Product Backlog | Concluído |
+| User Stories | Concluído |
+| Banco de Dados | Concluído |
+| Programação Estruturada em C | Concluído |
+| Pesquisa e Inovação | Concluído |
+| Redes e Sistemas Distribuídos | Concluído |
+| Direitos Humanos e Inclusão | Concluído |
+| Documento final | Concluído |
 
 ---
 
@@ -112,8 +113,8 @@ Os principais diagramas do sistema estão disponíveis na documentação:
 ```text
 docs/       → documentação e artefatos acadêmicos
 scrum/      → planejamento e acompanhamento ágil
-src/        → implementação do sistema
-database/   → estrutura e scripts do banco de dados
+src/        → implementação do sistema (C)
+database/   → estrutura e scripts do banco de dados (MySQL)
 assets/     → recursos visuais utilizados no projeto
 ```
 
@@ -122,7 +123,6 @@ assets/     → recursos visuais utilizados no projeto
 ## Navegação rápida
 
 ### Visão geral
-
 - [Problema e solução](docs/01-visao-geral/problema-e-solucao.md)
 - [Objetivos](docs/01-visao-geral/objetivos.md)
 - [Escopo](docs/01-visao-geral/escopo.md)
@@ -130,53 +130,44 @@ assets/     → recursos visuais utilizados no projeto
 - [Regras de negócio](docs/01-visao-geral/regras-de-negocio.md)
 
 ### Engenharia de Software
-
 - [Requisitos funcionais](docs/02-engenharia-de-software/requisitos-funcionais.md)
 - [Requisitos não funcionais](docs/02-engenharia-de-software/requisitos-nao-funcionais.md)
 - [Casos de uso](docs/02-engenharia-de-software/casos-de-uso.md)
 - [Arquitetura](docs/02-engenharia-de-software/arquitetura.md)
 
 ### Scrum
-
 - [Product Backlog](scrum/product-backlog.md)
 - [User Stories](scrum/user-stories.md)
 - [Definition of Done](scrum/definition-of-done.md)
 - [Sprints](scrum/sprints/)
 
 ### Banco de Dados
-
 - [Documentação do banco](docs/04-banco-de-dados/)
-- [Scripts SQL](database/)
+- [Scripts SQL](database/sql/)
 
 ### Programação em C
-
-- [Código-fonte](src/c/)
+- [Código-fonte e Algoritmos](src/c/)
 
 ### Pesquisa e Inovação
-
 - [Documentação](docs/05-pesquisa-e-inovacao/)
 
 ### Redes
-
 - [Documentação](docs/06-redes/)
 
 ### Direitos Humanos
-
 - [Documentação](docs/07-direitos-humanos/)
 
 ### Documentação Final
-
 - [Entregas e backups](docs/08-documentacao-final/)
 
 ---
 
 ## Tecnologias e ferramentas
 
-- C
-- MySQL
+- C (GCC, C99)
+- MySQL Server / MySQL C API (`libmysqlclient`)
 - Astah UML
-- Git
-- GitHub
+- Git / GitHub
 
 ---
 
