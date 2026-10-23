@@ -1,12 +1,12 @@
 # Documentação do Projeto
 
-Esta pasta reúne a documentação acadêmica e técnica do **Sistema de Gestão de Comissões — Hitek Informática**.
+Esta pasta reúne a documentação acadêmica e técnica do **Sistema de Gestão de Comissões — Hitek Informática (PIM II)**.
 
-O conteúdo está organizado por área para facilitar a navegação, revisão, manutenção e rastreabilidade dos artefatos desenvolvidos ao longo do PIM II.
+O conteúdo está organizado por área para facilitar a navegação, revisão, manutenção e rastreabilidade de todos os artefatos desenvolvidos ao longo do projeto.
 
 ---
 
-## Estrutura da documentação
+## Estrutura da Documentação
 
 ```text
 docs/
@@ -25,290 +25,162 @@ docs/
 
 ## 01 — Visão Geral
 
-Reúne as informações fundamentais do projeto.
+Reúne as informações fundamentais e o alinhamento estratégico do projeto.
 
-Conteúdo:
+**Conteúdo:**
+- Problema e solução
+- Objetivos gerais e específicos
+- Escopo do sistema
+- Perfis de usuário (RBAC)
+- Regras de negócio
 
-- problema e solução;
-- objetivos;
-- escopo;
-- perfis de usuário;
-- regras de negócio.
+**Perfis e Permissões:**
+- **Vendedor:** Registro e consulta de vendas próprias.
+- **Financeiro:** Validação, liberação e quitação de comissões.
+- **Administrador:** Gestão global de usuários, parâmetros e relatórios.
 
-Essa seção também registra as responsabilidades e permissões atualmente definidas para os perfis:
-
-- Vendedor;
-- Financeiro;
-- Administrador.
-
-[Ver Visão Geral](01-visao-geral/)
+[👉 Ver Visão Geral](01-visao-geral/)
 
 ---
 
 ## 02 — Engenharia de Software
 
-Reúne os principais artefatos relacionados à definição, organização e modelagem do sistema.
+Reúne os artefatos de especificação, organização e arquitetura do sistema.
 
-Conteúdo:
+**Conteúdo:**
+- Requisitos funcionais (RFs)
+- Requisitos não funcionais (RNFs)
+- Casos de uso estendidos
+- Arquitetura lógica Cliente-Servidor (CLI + MySQL)
 
-- requisitos funcionais;
-- requisitos não funcionais;
-- casos de uso;
-- arquitetura lógica.
-
-Os artefatos dessa seção deverão permanecer coerentes com as regras de negócio e com os refinamentos definidos ao longo do projeto.
-
-[Ver Engenharia de Software](02-engenharia-de-software/)
+[👉 Ver Engenharia de Software](02-engenharia-de-software/)
 
 ---
 
 ## 03 — Diagramas
 
-Reúne os diagramas atualmente utilizados para representar o sistema.
+Reúne as representações visuais e estruturais da aplicação.
 
-Diagramas atuais:
+**Diagramas Documentados:**
+- **Diagrama de Casos de Uso:** Mapeamento de atores e suas interações com o sistema.
+- **Diagrama Estendido:** Representação dos módulos funcionais, funções em C e dependências.
 
-- Diagrama de Casos de Uso;
-- Diagrama Estendido.
-
-O Diagrama de Casos de Uso representa os atores e suas interações com o sistema.
-
-O Diagrama Estendido representa os módulos funcionais, suas funções e dependências.
-
-[Ver Diagramas](03-diagramas/)
+[👉 Ver Diagramas](03-diagramas/)
 
 ---
 
 ## 04 — Banco de Dados
 
-Reúne a documentação relacionada à modelagem do banco de dados.
+Reúne a documentação completa da modelagem relacional do sistema.
 
-Conteúdo previsto:
+**Conteúdo:**
+- Modelo conceitual e DER
+- Modelo lógico e esquemas relacionais
+- Normalização até a 3ª Forma Normal (3FN)
+- Modelo físico (MySQL 8.0 / InnoDB, `utf8mb4`)
 
-- modelo conceitual;
-- DER;
-- modelo lógico;
-- normalização;
-- modelo físico.
+*Os scripts SQL DDL/DML estão centralizados na pasta [`/database/`](../database/).*
 
-A modelagem deverá contemplar as informações necessárias ao funcionamento do sistema, incluindo vendas, comissões, pagamentos, usuários, configurações e demais dados definidos pelas regras de negócio.
-
-Os scripts SQL serão armazenados separadamente na pasta:
-
-```text
-/database/
-```
-
-[Ver Banco de Dados](04-banco-de-dados/)
+[👉 Ver Banco de Dados](04-banco-de-dados/)
 
 ---
 
 ## 05 — Pesquisa e Inovação
 
-Reúne os conteúdos relacionados à fundamentação científica e à análise da solução proposta.
+Reúne a fundamentação científica, metodológica e o estudo de impacto da solução.
 
-Conteúdo previsto:
+**Conteúdo:**
+- Metodologia de pesquisa aplicada (Estudo de Caso e BPM)
+- Fundamentação teórica
+- Análise de soluções relacionadas
+- Inovação (*AS-IS* vs. *TO-BE*): Redução do tempo de fechamento de 2 dias úteis para < 2 horas com 0% de erro manual.
 
-- metodologia;
-- fundamentação teórica;
-- análise de soluções relacionadas;
-- inovação.
-
-[Ver Pesquisa e Inovação](05-pesquisa-e-inovacao/)
+[👉 Ver Pesquisa e Inovação](05-pesquisa-e-inovacao/)
 
 ---
 
-## 06 — Redes
+## 06 — Redes e Infraestrutura
 
-Reúne a documentação relacionada à infraestrutura necessária para suportar a solução.
+Reúne a especificação de infraestrutura de rede e topologia para suporte ao sistema.
 
-Conteúdo previsto:
+**Conteúdo:**
+- Topologia física/lógica em estrela (Ethernet Gigabit Cat6)
+- Dimensionamento de equipamentos e endereçamento IP
+- Segmentação em VLANs (`VLAN_VENDAS`, `VLAN_FINANCEIRO`, `VLAN_SERVIDORES`)
+- Servidor MySQL no IP fixo `192.168.30.10:3306`
+- Comunicação segura e políticas de segurança
 
-- arquitetura da rede;
-- topologia;
-- equipamentos;
-- endereçamento;
-- VLANs;
-- comunicação entre serviços;
-- segurança;
-- sistemas distribuídos.
-
-[Ver Redes](06-redes/)
+[👉 Ver Redes](06-redes/)
 
 ---
 
 ## 07 — Direitos Humanos e Inclusão
 
-Reúne as análises relacionadas ao impacto humano e ao uso responsável da tecnologia.
+Reúne a análise do impacto humano, acessibilidade, ética e conformidade legal.
 
-Conteúdo previsto:
+**Conteúdo:**
+- Acessibilidade na CLI (alto contraste, navegação por teclado/números, leitores NVDA/Orca)
+- Inclusão digital e usabilidade simplificada
+- Privacidade, segurança de dados e logs de auditoria
+- Conformidade com a LGPD (Artigos 6º e 18) e sanitização contra SQL Injection (`mysql_real_escape_string()`)
 
-- acessibilidade;
-- inclusão digital;
-- privacidade;
-- proteção dos dados;
-- segurança das informações;
-- aspectos éticos;
-- LGPD, quando aplicável.
-
-[Ver Direitos Humanos e Inclusão](07-direitos-humanos/)
+[👉 Ver Direitos Humanos e Inclusão](07-direitos-humanos/)
 
 ---
 
 ## 08 — Documentação Final
 
-Reúne as versões destinadas à revisão e entrega do PIM.
+Reúne as versões consolidadas para revisão e entrega acadêmica do PIM II.
 
-Organização prevista:
-
+**Estrutura da Pasta:**
 ```text
 08-documentacao-final/
-├── backups/
-└── entrega/
+├── backups/    # Versões intermediárias e revisões
+└── entrega/    # Artefatos finais em DOCX e PDF (Normas ABNT)
 ```
 
-Essa seção será utilizada para armazenar:
-
-- versões intermediárias;
-- backups;
-- DOCX final;
-- PDF final.
-
-[Ver Documentação Final](08-documentacao-final/)
+[👉 Ver Documentação Final](08-documentacao-final/)
 
 ---
 
-## Relação com outras áreas do repositório
+## Relação com Outras Áreas do Repositório
 
-Além da documentação acadêmica presente em `docs/`, o projeto possui áreas específicas para outros artefatos.
+| Módulo | Caminho | Descrição |
+|---|---|---|
+| **Scrum** | [`/scrum/`](../scrum/) | Backlog, User Stories, DoD e histórico de Sprints |
+| **Código C** | [`/src/c/`](../src/c/) | Código-fonte da aplicação CLI em Linguagem C |
+| **Banco de Dados** | [`/database/`](../database/) | Scripts SQL DDL/DML, views e procedimentos |
+| **Assets Visuais** | [`/assets/`](../assets/) | Imagens, diagramas exportados e recursos gráficos |
 
-### Scrum
+---
+
+## Fluxo de Coerência entre Artefatos
 
 ```text
-/scrum/
-```
-
-Contém:
-
-- Product Backlog;
-- User Stories;
-- Definition of Done;
-- Sprints.
-
-A documentação Scrum registra tanto o planejamento atual quanto a evolução histórica do projeto.
-
-[Ver Scrum](../scrum/)
-
----
-
-### Programação Estruturada em C
-
-```text
-/src/c/
-```
-
-Será utilizada para armazenar as funcionalidades selecionadas para implementação em linguagem C.
-
-A implementação deverá permanecer coerente com os requisitos, regras de negócio e modelagem funcional do sistema.
-
-[Ver Programação em C](../src/c/)
-
----
-
-### Banco de Dados — SQL
-
-```text
-/database/
-```
-
-Será utilizada para armazenar os scripts SQL após a conclusão e validação da modelagem de dados.
-
-[Ver Scripts de Banco de Dados](../database/)
-
----
-
-### Assets
-
-```text
-/assets/
-```
-
-Reúne recursos visuais gerais utilizados no repositório.
-
-[Ver Assets](../assets/)
-
----
-
-## Navegação
-
-```text
-Visão Geral
-     ↓
-Engenharia de Software
-     ↓
-Diagramas
-     ↓
-Banco de Dados
-     ↓
-Pesquisa e Inovação
-     ↓
-Redes
-     ↓
-Direitos Humanos e Inclusão
-     ↓
-Documentação Final
+Regras de Negócio ──► Requisitos ──► Casos de Uso ──► Diagramas ──► Arquitetura ──► Banco de Dados ──► Implementação em C
 ```
 
 ---
 
-## Coerência entre os artefatos
+## Status Geral da Documentação
 
-As alterações realizadas no produto deverão ser refletidas nos documentos relacionados.
-
-Fluxo de referência:
-
-```text
-Regras de Negócio
-       ↓
-Requisitos
-       ↓
-Casos de Uso
-       ↓
-Diagramas
-       ↓
-Arquitetura
-       ↓
-Banco de Dados
-       ↓
-Implementação
-```
-
-Os artefatos Scrum também deverão acompanhar essas alterações quando houver impacto no planejamento ou nas funcionalidades do produto.
+| Área | Status | Detalhes / Entregáveis |
+|---|:---:|---|
+| **01 — Visão Geral** | 🟢 Concluído | Problema, objetivos, regras de negócio e perfis RBAC |
+| **02 — Engenharia de Software** | 🟢 Concluído | RFs, RNFs, casos de uso e arquitetura lógica em C |
+| **03 — Diagramas** | 🟢 Concluído | Casos de uso e diagrama estendido de módulos |
+| **04 — Banco de Dados** | 🟢 Concluído | Conceitual, Lógico, Físico, 3FN e DDL no `/database/` |
+| **05 — Pesquisa e Inovação** | 🟢 Concluído | Metodologia BPM, fundamentação e análise *AS-IS / TO-BE* |
+| **06 — Redes** | 🟢 Concluído | Topologia, endereçamento, VLANs e MySQL no IP `192.168.30.10` |
+| **07 — Direitos Humanos e Inclusão** | 🟢 Concluído | Acessibilidade CLI (NVDA), LGPD e segurança sanitizada |
+| **08 — Documentação Final** | 🟡 Em desenvolvimento | Compilação e formatação ABNT dos arquivos DOCX e PDF |
 
 ---
 
-## Status geral
+## Observações de Manutenção
 
-| Área | Status |
-|---|---|
-| Visão Geral | ✅ Estruturada |
-| Engenharia de Software | ✅ Estruturada |
-| Diagramas | ✅ Estruturada |
-| Banco de Dados | 🟡 Em desenvolvimento |
-| Pesquisa e Inovação | ⚪ Pendente |
-| Redes | ⚪ Pendente |
-| Direitos Humanos e Inclusão | ⚪ Pendente |
-| Documentação Final | 🟡 Em desenvolvimento |
-
----
-
-## Observação
-
-A existência de uma pasta ou de um README não significa que a respectiva etapa esteja concluída.
-
-Os status deverão ser atualizados conforme os artefatos forem efetivamente desenvolvidos, revisados e validados pela equipe.
-
-Os documentos atuais devem representar a versão mais recente do sistema, enquanto os registros históricos das Sprints devem preservar a evolução real do projeto.
+- **Sincronismo de Artefatos:** Qualquer alteração no escopo ou código em C/SQL deve ser refletida na respectiva documentação.
+- **Preservação Histórica:** Os registros de Sprints na pasta `/scrum/` mantêm o histórico evolutivo, enquanto os arquivos em `docs/` refletem a versão atual do sistema.
 
 ---
 
