@@ -1,61 +1,61 @@
- # 🗄️ Scripts SQL do Banco de Dados
+# Banco de Dados – Scripts SQL
 
-Esta pasta reúne os scripts SQL necessários para criação, povoamento e consulta do banco de dados relacional **`db_hitek_comissoes`**, utilizado no **Sistema de Gestão de Comissões — Hitek Informática**.
+Esta pasta é utilizada para armazenar a modelagem e os scripts SQL do **Sistema de Gestão de Comissões – Hitek Informática**.
 
----
+## Status
+**Concluído**
 
-## 📁 Arquivos da Pasta
+Os scripts SQL foram desenvolvidos e sincronizados com a modelagem relacional, DER e protótipo em linguagem C.
 
-| Arquivo | Categoria | Descrição |
-| :--- | :--- | :--- |
-| **[`schema.sql`](schema.sql)** | **DDL** (*Data Definition Language*) | Script de criação da base de dados, tabelas, chaves primárias/estrangeiras, restrições e índices de otimização. |
-| **[`inserts.sql`](inserts.sql)** | **DML** (*Data Manipulation Language*) | Carga inicial de dados para testes, incluindo usuários, colaboradores, parâmetros do sistema, vendas e comissões. |
-| **[`consultas.sql`](consultas.sql)** | **DQL** (*Data Query Language*) | Conjunto de consultas complexas (`JOIN`, `GROUP BY`, somatórios) para relatórios gerenciais e extratos de vendedores. |
+## Organização da Estrutura
 
----
-
-## 🚀 Ordem de Execução Recomendada
-
-Para garantir a integridade referencial das chaves estrangeiras, execute os scripts exatamente na seguinte ordem:
-
-```bash
-1. schema.sql    # Cria a base de dados e a estrutura de tabelas
-2. inserts.sql   # Popula o banco com os dados iniciais e simulação
-3. consultas.sql # Executa relatórios de teste para validação
+```text
+database/
+├── BD-hitek-comissoes.sql
+├── der-hitek-comissoes.png
+├── modelo-relacional.mwb
+├── README.md
+└── sql/
+    ├── schema.sql
+    ├── inserts.sql
+    ├── consultas.sql
+    └── README.md
 ```
 
----
+## Descrição dos Arquivos
 
-## 🛠️ Como Executar os Scripts
+### 1. `sql/schema.sql` (DDL)
+Responsável pela criação da estrutura física da base de dados `db_hitek_comissoes`, incluindo:
+- Definição das tabelas (`colaborador`, `venda`, `comissao`, `configuracao`, `pagamento_comissao`, `desconto`);
+- Chaves primárias e estrangeiras;
+- Restrições de unicidade (`UNIQUE`), valores padrão (`DEFAULT`) e regras de exclusão/atualização (`CASCADE`/`RESTRICT`);
+- Inserção inicial do usuário administrador padrão e da configuração do percentual de comissão.
 
-### Opção 1: Via Linha de Comando (Terminal / CMD)
+### 2. `sql/inserts.sql` (DML)
+Popula o banco de dados com massa de dados de teste para validação dos fluxos do sistema:
+- Cadastro de colaboradores e perfis de acesso;
+- Registro de vendas (com valores, custos e regras de faturamento/retirada);
+- Cálculo e geração automática de comissões;
+- Histórico de pagamentos e ajustes/descontos.
 
-Acesse o terminal no diretório `database/sql/` e execute o comando abaixo (substituindo `root` pelo seu usuário do MySQL, se necessário):
+### 3. `sql/consultas.sql` (DQL)
+Contém consultas preparadas e relatórios gerenciais:
+- Extrato detalhado de comissões por vendedor;
+- Acompanhamento de vendas e status de retirada do equipamento;
+- Filtragem de comissões pendentes para conferência do setor financeiro;
+- Auditoria e histórico de pagamentos efetuados.
+
+## Ordem de Execução Recomendada
+
+Para garantir a integridade referencial, os scripts devem ser executados na seguinte ordem:
 
 ```bash
-# Execute os 3 passos em sequência:
-mysql -u root -p < schema.sql
-mysql -u root -p < inserts.sql
-mysql -u root -p < consultas.sql
+1. sql/schema.sql    # Cria o banco e as tabelas
+2. sql/inserts.sql   # Popula com dados de teste
+3. sql/consultas.sql # Executa os relatórios e validações
 ```
 
-### Opção 2: Via MySQL Workbench ou DBeaver
-
-1. Abra o seu cliente MySQL de preferência.
-2. Conecte-se ao servidor local ou remoto.
-3. Abra e execute o conteúdo do arquivo **`schema.sql`** (pressione `Ctrl + Shift + Enter` ou clique no raio verde).
-4. Abra e execute o arquivo **`inserts.sql`**.
-5. Abra o arquivo **`consultas.sql`** para visualizar as consultas e relatórios gerados.
-
----
-
-## 🔗 Documentação Relacionada
-
-- [Modelo Conceitual](../../docs/04-banco-de-dados/modelo-conceitual.md)
-- [Modelo Lógico](../../docs/04-banco-de-dados/modelo-logico.md)
-- [Modelo Físico](../../docs/04-banco-de-dados/modelo-fisico.md)
-- [Normalização de Banco de Dados](../../docs/04-banco-de-dados/normalizacao.md)
-
----
-
-[← Voltar à documentação de Banco de Dados](../../docs/04-banco-de-dados/)
+## Documentação Relacionada
+- [Visão Geral e Regras de Negócio](../docs/01-visao-geral/regras-de-negocio.md)
+- [Requisitos Funcionais](../docs/02-engenharia-de-software/requisitos-funcionais.md)
+- [Sprint 07 – Banco de Dados](../scrum/sprints/sprint-07.md)
