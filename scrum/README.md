@@ -1,126 +1,54 @@
-# Scrum
+# Processo Ágil e Documentação Scrum
 
-Esta seção reúne os artefatos relacionados à aplicação do **Scrum** no desenvolvimento do projeto **Sistema de Gestão de Comissões — Hitek Informática**.
+Esta seção reúne os artefatos de planejamento, execução e controle ágil do **Sistema de Gestão de Comissões — Hitek Informática (PIM II)**.
 
-O objetivo é documentar a organização da equipe, o planejamento do produto, as funcionalidades priorizadas e o acompanhamento das atividades realizadas durante o desenvolvimento do PIM.
-
----
-
-## Equipe Scrum
-
-| Integrante | Papel |
-|---|---|
-| Kawan Felipe | Product Owner |
-| Júlio Poleto | Scrum Master |
-| João Martins | Dev Team |
-| Paulo Nambu | Dev Team |
-| Victor Andrade | Dev Team |
-| Ícaro Marcelo | Dev Team |
+A metodologia **Scrum** foi adotada para estruturar o fluxo de trabalho da equipe, garantindo rastreabilidade, entregas incrementais e flexibilidade no alinhamento com as regras de negócio do produto.
 
 ---
 
-## Papéis
+## Equipe Scrum e Papéis
 
-### Product Owner
-
-Responsável por representar as necessidades do produto e auxiliar na definição, priorização e refinamento das funcionalidades.
-
-No projeto, essa função é exercida por:
-
-**Kawan Felipe**
-
-As decisões e refinamentos definidos pelo Product Owner deverão ser refletidos nos artefatos relacionados do projeto.
-
----
-
-### Scrum Master
-
-Responsável por auxiliar a equipe na aplicação do Scrum e na organização do processo de desenvolvimento.
-
-No projeto, essa função é exercida por:
-
-**Júlio Poleto**
+| Integrante | Papel Scrum | Responsabilidades Principais |
+|---|---|---|
+| **Kawan Felipe** | Product Owner (PO) | Definição de visão do produto, priorização do backlog, refinamento de regras de negócio e validação dos critérios de aceite. |
+| **Júlio Poleto** | Scrum Master (SM) | Facilitação dos ritos, remoção de impedimentos, garantia da adesão à metodologia e alinhamento do time. |
+| **João Martins** | Dev Team | Desenvolvimento de módulos funcionais em Linguagem C, integração com MySQL e modelagem de banco de dados. |
+| **Paulo Nambu** | Dev Team | Análise de requisitos, modelagem relacional (3FN) e documentação técnica. |
+| **Victor Andrade** | Dev Team | Infraestrutura de redes, segmentação de VLANs, segurança e acessibilidade CLI (LGPD). |
+| **Ícaro Marcelo** | Dev Team | Testes unitários/integração, validação de regras de negócio e compilação de artefatos ABNT. |
 
 ---
 
-### Dev Team
+## Artefatos Scrum
 
-Responsável pela execução das atividades necessárias para o desenvolvimento dos artefatos e funcionalidades do projeto.
-
-Integrantes:
-
-- João Martins;
-- Paulo Nambu;
-- Victor Andrade;
-- Ícaro Marcelo.
+| Artefato | Descrição | Link de Acesso |
+|---|---|:---:|
+| **Product Backlog** | Lista priorizada de todas as funcionalidades, requisitos e melhorias técnicas do sistema. | [👉 Visualizar](product-backlog.md) |
+| **User Stories** | Histórias de usuário com critérios de aceite focadas nos perfis Vendedor, Financeiro e Administrador. | [👉 Visualizar](user-stories.md) |
+| **Definition of Done (DoD)** | Critérios de qualidade mínimos necessários para considerar uma tarefa/item concluído. | [👉 Visualizar](definition-of-done.md) |
+| **Histórico de Sprints** | Registro detalhado do planejamento, execução, dailies, reviews e retrospectivas (Sprints 01 a 10). | [👉 Visualizar](sprints/) |
 
 ---
 
-## Artefatos
+## Refinamento do Produto (Regras de Negócio RBAC)
 
-### Product Backlog
+Durante as Sprints de refinamento, o Product Owner estabeleceu atualização nas permissões funcionais do perfil **Vendedor**:
 
-O Product Backlog reúne as funcionalidades e atividades previstas para o desenvolvimento do sistema.
-
-Ele deverá ser atualizado sempre que houver refinamentos ou novas decisões relacionadas ao produto.
-
-[Ver Product Backlog](product-backlog.md)
-
-### User Stories
-
-As User Stories representam funcionalidades do sistema sob a perspectiva dos usuários.
-
-As histórias deverão permanecer coerentes com os requisitos, regras de negócio e decisões mais recentes do Product Owner.
-
-[Ver User Stories](user-stories.md)
-
-### Definition of Done
-
-A Definition of Done estabelece os critérios utilizados para considerar uma atividade concluída.
-
-[Ver Definition of Done](definition-of-done.md)
-
-### Sprints
-
-As atividades desenvolvidas ao longo do projeto são organizadas em Sprints para registrar a evolução real do trabalho.
-
-[Ver Sprints](sprints/)
+> ### 📝 Diretrizes do perfil Vendedor
+>
+> **O Vendedor possui permissão para:**
+> - Atualizar a situação operacional da venda (ex.: *Em Processamento*, *Aguardando Faturamento*);
+> - Informar/atualizar dados de faturamento e formas de pagamento;
+> - Atualizar a situação de retirada/envio do produto (quando aplicável);
+> - Ajustar o valor bruto de venda.
+>
+> **O Vendedor NÃO possui permissão para:**
+> - Alterar o valor de custo dos produtos/serviços;
+> - Confirmar a baixa financeira/quitação da venda (exclusivo do perfil **Financeiro**).
 
 ---
 
-## Refinamento atual do produto
-
-Durante a evolução do projeto, o Product Owner definiu novas permissões para o perfil Vendedor.
-
-O Vendedor poderá:
-
-- atualizar a situação da venda;
-- atualizar informações de pagamento/faturamento;
-- atualizar a situação de retirada quando aplicável;
-- alterar o valor da venda.
-
-O Vendedor não poderá:
-
-- alterar o valor de custo;
-- confirmar a baixa da venda.
-
-A confirmação da baixa continuará sob responsabilidade do Financeiro.
-
-Esse refinamento deverá permanecer refletido em:
-
-- requisitos funcionais;
-- regras de negócio;
-- casos de uso;
-- diagramas;
-- Product Backlog;
-- User Stories;
-- arquitetura;
-- modelagem de dados;
-- implementação.
-
----
-
-## Organização
+## Estrutura de Arquivos da Pasta
 
 ```text
 scrum/
@@ -144,77 +72,47 @@ scrum/
 
 ---
 
-## Relação com o projeto
+## Matriz de Rastreabilidade e Impacto
 
-O planejamento Scrum deverá acompanhar os principais entregáveis do PIM, incluindo:
-
-- levantamento e revisão dos requisitos;
-- regras de negócio;
-- casos de uso;
-- diagramas;
-- refinamentos solicitados pelo Product Owner;
-- modelagem do banco de dados;
-- implementação em C;
-- documentação das demais disciplinas;
-- revisão da documentação final.
-
----
-
-## Situação atual
-
-| Artefato | Status |
-|---|---|
-| Definição dos papéis Scrum | ✅ Concluído |
-| Product Backlog | ✅ Atualizado |
-| User Stories | ✅ Atualizado |
-| Definition of Done | ✅ Definida |
-| Planejamento das Sprints | 🟡 Em desenvolvimento |
-
----
-
-## Atualização dos artefatos
-
-Os artefatos Scrum deverão ser atualizados conforme o andamento real do projeto.
-
-Quando uma decisão alterar uma funcionalidade, deverá ser verificada a coerência entre:
+Toda mudança de escopo aprovada pelo PO deve propagar sequencialmente por todos os artefatos técnicos do projeto:
 
 ```text
 Decisão do Product Owner
-        ↓
-Product Backlog
-        ↓
-User Stories
-        ↓
-Requisitos
-        ↓
-Regras de negócio
-        ↓
-Casos de uso
-        ↓
-Diagramas
-        ↓
-Implementação
+        │
+        ▼
+Product Backlog & User Stories
+        │
+        ▼
+Requisitos Funcionais & Regras de Negócio
+        │
+        ▼
+Casos de Uso & Diagramas de Arquitetura
+        │
+        ▼
+Modelagem Relacional (SQL / DDL / DML)
+        │
+        ▼
+Implementação em C & Testes de Integração
 ```
 
-Alterações não deverão ser aplicadas apenas em um único documento se afetarem outras partes do sistema.
+---
+
+## Status dos Artefatos Scrum
+
+| Artefato / Atividade | Status | Observações |
+|---|:---:|---|
+| Definição dos Papéis Scrum | 🟢 Concluído | PO, SM e Dev Team definidos e atuantes |
+| Product Backlog | 🟢 Concluído | Totalmente refinado com RFs e RNFs |
+| User Stories | 🟢 Concluído | Mapeadas para os 3 perfis funcionais com DoD |
+| Definition of Done (DoD) | 🟢 Concluído | Padrões de código C, SQL e ABNT estabelecidos |
+| Execução e Registro das Sprints | 🟢 Concluído | Sprints 01 a 10 documentadas em `/sprints/` |
 
 ---
 
-## Histórico
+## Diretrizes de Governança e Histórico
 
-As Sprints anteriores devem preservar o histórico real do projeto.
-
-Por esse motivo, uma decisão tomada posteriormente não deverá ser inserida retroativamente em uma Sprint antiga como se já existisse naquela etapa.
-
-Novos refinamentos deverão ser registrados na Sprint correspondente ao momento em que foram definidos.
-
----
-
-## Observação
-
-Os artefatos Scrum devem permanecer coerentes com o estado atual do desenvolvimento e com a documentação presente no repositório.
-
-O histórico das Sprints deverá representar a evolução do projeto, enquanto os artefatos atuais deverão representar a versão mais recente do produto.
+1. **Imutabilidade do Histórico:** Decisões tomadas em Sprints avançadas não alteram retroativamente os registros de Sprints anteriores. O histórico de Sprints preserva a linha do tempo real do projeto.
+2. **Consistência Ativa:** O estado atual do sistema refletido em `/docs/` e `/src/c/` deve coincidir rigorosamente com a versão mais recente do Product Backlog e das User Stories.
 
 ---
 
