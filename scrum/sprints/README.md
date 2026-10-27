@@ -1,399 +1,221 @@
-# Sprints
+# Histórico e Planejamento das Sprints
 
-Esta seção reúne o histórico e o planejamento das Sprints do **Sistema de Gestão de Comissões — Hitek Informática**.
+Esta seção reúne o histórico completo e o acompanhamento das Sprints do **Sistema de Gestão de Comissões — Hitek Informática (PIM II)**.
 
-A divisão foi organizada com base na sequência real de desenvolvimento registrada durante o projeto.
-
-As primeiras Sprints representam atividades já realizadas. As etapas futuras permanecem identificadas como planejadas até que sejam efetivamente desenvolvidas.
+A organização reflete o desenvolvimento real e incremental do projeto, desde a concepção inicial até a implementação do banco de dados, aplicação executada no terminal em C e disciplinas complementares.
 
 ---
 
-## Visão geral
+## Visão Geral do Ciclo de Vida
 
-| Sprint | Título | Status |
-|---|---|---|
-| Sprint 01 | Definição Inicial do Projeto | ✅ Concluída |
-| Sprint 02 | Requisitos e Planejamento Inicial | ✅ Concluída |
-| Sprint 03 | Modelagem Inicial do Sistema | ✅ Concluída |
-| Sprint 04 | Refinamento das Regras e do Fluxo | ✅ Concluída |
-| Sprint 05 | Consolidação da Modelagem Funcional | ✅ Concluída |
-| Sprint 06 | Organização do GitHub e Formalização do Scrum | 🟡 Em andamento |
-| Sprint 07 | Modelagem e Implementação do Banco de Dados | ⚪ Planejada |
-| Sprint 08 | Programação Estruturada em C | ⚪ Planejada |
-| Sprint 09 | Disciplinas Complementares | ⚪ Planejada |
-| Sprint 10 | Integração, Revisão e Entrega Final | ⚪ Planejada |
+| Sprint | Título / Foco Principal | Status | Entregáveis Principais |
+|---|---|:---:|---|
+| **Sprint 01** | Definição Inicial do Projeto | ✅ Concluída | Escopo, problema, solução Hitek e objetivos do PIM II |
+| **Sprint 02** | Requisitos e Planejamento | ✅ Concluída | Requisitos (RF/RNF), Regras de Negócio e Product Backlog |
+| **Sprint 03** | Modelagem Inicial do Sistema | ✅ Concluída | 1ª versão do Casos de Uso e Modelo Entidade-Relacionamento |
+| **Sprint 04** | Refinamento de Regras e Fluxo | ✅ Concluída | Estados da comissão, faturamento, retirada e Diagrama de Atividade |
+| **Sprint 05** | Consolidação Funcional | ✅ Concluída | Diagrama Estendido, módulos C, tratamento de pagamentos parciais |
+| **Sprint 06** | Gestão Scrum e GitHub | ✅ Concluída | Estruturação do repositório, User Stories, DoD e refinamento do PO |
+| **Sprint 07** | Banco de Dados Relacional | ✅ Concluída | Conceitual, Lógico, Físico, 3FN e scripts DDL/DML MySQL (`schema.sql`) |
+| **Sprint 08** | Programação Estruturada em C | ✅ Concluída | Aplicação no Terminal (C11 + MySQL API), RBAC, sanitização e transações |
+| **Sprint 09** | Disciplinas Complementares | ✅ Concluída | Pesquisa/Inovação (BPM), Redes (VLANs/IPs) e Direitos Humanos/LGPD |
+| **Sprint 10** | Diagramas de Sequência e Documentação | 🟢 Concluída | 4 Diagramas de Sequência UML, integração final e formatação ABNT |
 
 ---
 
 # Sprint 01 — Definição Inicial do Projeto
 
-Nesta etapa foram estabelecidas as bases do projeto.
+Nesta etapa foram estabelecidas as bases estratégicas e operacionais do projeto.
 
-Principais atividades:
+**Principais Atividades:**
+- Definição do cenário organizacional da Hitek Informática.
+- Mapeamento do problema de controle manual de comissões.
+- Proposta da solução computacional automatizada.
+- Definição do escopo, justificativa e objetivos gerais/específicos.
+- Mapeamento dos perfis iniciais e fluxo operacional de vendas.
 
-- definição da Hitek Informática como organização;
-- identificação do problema;
-- definição da solução computacional;
-- justificativa;
-- objetivos;
-- escopo;
-- perfis iniciais;
-- fluxo inicial da solução.
-
-[Ver Sprint 01](sprint-01.md)
+📄 [Ver Detalhes da Sprint 01](sprint-01.md)
 
 ---
 
 # Sprint 02 — Requisitos e Planejamento Inicial
 
-Nesta etapa foram definidos os primeiros artefatos de Engenharia de Software.
+Definição dos primeiros artefatos formais de Engenharia de Software.
 
-Principais atividades:
+**Principais Atividades:**
+- Levantamento de Requisitos Funcionais (RFs) e Não Funcionais (RNFs).
+- Formalização das Regras de Negócio iniciais.
+- Definição da matriz de perfis e permissões (RBAC).
+- Especificação textual dos primeiros Casos de Uso.
+- Elaboração da versão inicial do Product Backlog.
 
-- requisitos funcionais;
-- requisitos não funcionais;
-- regras de negócio iniciais;
-- perfis e permissões;
-- casos de uso textuais;
-- primeira versão do Product Backlog.
-
-[Ver Sprint 02](sprint-02.md)
+📄 [Ver Detalhes da Sprint 02](sprint-02.md)
 
 ---
 
 # Sprint 03 — Modelagem Inicial do Sistema
 
-Nesta etapa começou a representação visual e estrutural da solução.
+Estruturação visual e concepção do modelo de dados.
 
-Principais atividades:
+**Principais Atividades:**
+- Primeira versão do Diagrama de Casos de Uso UML.
+- Mapeamento das interações entre atores e sistema.
+- Concepção inicial do Modelo Entidade-Relacionamento (MER).
+- Levantamento de dúvidas técnicas e pontos de revisão funcional.
 
-- primeira versão do Diagrama de Casos de Uso;
-- análise das interações entre atores e funcionalidades;
-- início da modelagem do banco de dados;
-- primeira versão do MER;
-- identificação de dúvidas e pontos de revisão.
-
-[Ver Sprint 03](sprint-03.md)
+📄 [Ver Detalhes da Sprint 03](sprint-03.md)
 
 ---
 
 # Sprint 04 — Refinamento das Regras e do Fluxo
 
-Nesta etapa foram refinadas as regras responsáveis pelo funcionamento da gestão de comissões.
+Refinamento detalhado das regras operacionais e de cálculo de comissões.
 
-Principais atividades:
+**Principais Atividades:**
+- Ciclo de vida da comissão (`PENDENTE`, `LIBERADA`, `PAGA`, `CANCELADA`).
+- Condições de liberação: Venda faturada E equipamento retirado.
+- Separação de responsabilidades: Confirmação da baixa mantida com o Financeiro.
+- Desenvolvimento do Diagrama de Atividade para mapeamento do fluxo de processo.
 
-- revisão das regras de negócio;
-- consolidação dos perfis;
-- definição dos estados da comissão;
-- refinamento da confirmação da baixa;
-- tratamento da venda faturada;
-- retirada do equipamento;
-- desenvolvimento e revisão do Diagrama de Atividade.
+> *Nota Histórica:* O Diagrama de Atividade fez parte da modelagem nesta etapa do projeto, sendo posteriormente substituído pelos Diagramas de Sequência e Estendido.
 
-> O Diagrama de Atividade fazia parte da modelagem utilizada nesta etapa histórica do projeto.
-
-[Ver Sprint 04](sprint-04.md)
+📄 [Ver Detalhes da Sprint 04](sprint-04.md)
 
 ---
 
 # Sprint 05 — Consolidação da Modelagem Funcional
 
-Nesta etapa foram consolidados os principais diagramas e funcionalidades do sistema.
+Mapeamento arquitetural das funções em C e tratamento de exceções financeiras.
 
-Principais atividades:
+**Principais Atividades:**
+- Evolução do Diagrama de Casos de Uso (`<<include>>` de autenticação).
+- Regra de abates e pagamentos parciais de comissões.
+- Concepção do **Diagrama Estendido**, conectando os módulos funcionais às rotinas executáveis do sistema.
 
-- revisão do Diagrama de Casos de Uso;
-- autenticação obrigatória;
-- revisão de `<<include>>` e `<<extend>>`;
-- refinamento da baixa;
-- refinamento do pagamento e da quitação;
-- tratamento de pagamentos parciais;
-- revisão do Diagrama de Atividade;
-- desenvolvimento do Diagrama Estendido;
-- definição dos módulos e funções do sistema.
-
-> O Diagrama de Atividade ainda fazia parte dos artefatos utilizados naquele momento. Posteriormente, ele foi retirado do conjunto atual de diagramas do projeto.
-
-[Ver Sprint 05](sprint-05.md)
+📄 [Ver Detalhes da Sprint 05](sprint-05.md)
 
 ---
 
 # Sprint 06 — Organização do GitHub e Formalização do Scrum
 
-Esta representa a etapa atual do projeto.
+Estruturação profissional do repositório e refinamentos solicitados pelo PO.
 
-Principais atividades:
+**Principais Atividades:**
+- Padronização do repositório no GitHub e documentação em Markdown.
+- Elaboração das User Stories, Product Backlog e Definition of Done (DoD).
+- Incorporação do refinamento do PO para o perfil **Vendedor**:
+  - Permissão para atualizar situação da venda e alterar o valor final da venda.
+  - Bloqueio estrito de alteração do valor de custo e de confirmação de baixa.
 
-- criação e estruturação do repositório GitHub;
-- organização da documentação;
-- criação dos READMEs;
-- atualização do Product Backlog;
-- criação das User Stories;
-- definição da Definition of Done;
-- reconstrução do histórico das Sprints;
-- registro de refinamentos solicitados pelo Product Owner;
-- atualização dos artefatos afetados;
-- preparação das áreas para as próximas etapas.
-
-Entre os refinamentos registrados nesta etapa estão:
-
-- atualização da situação da venda pelo Vendedor;
-- alteração do valor da venda pelo Vendedor;
-- restrição de alteração do valor de custo para o perfil Vendedor;
-- manutenção da confirmação da baixa sob responsabilidade do Financeiro.
-
-**Status:** Em andamento
-
-[Ver Sprint 06](sprint-06.md)
+📄 [Ver Detalhes da Sprint 06](sprint-06.md)
 
 ---
 
 # Sprint 07 — Modelagem e Implementação do Banco de Dados
 
-Etapa planejada para desenvolvimento completo da estrutura de dados.
+Concepção e implementação física do banco relacional.
 
-Principais atividades previstas:
+**Principais Atividades:**
+- Elaboração dos Modelos Conceitual, Lógico e Físico no MySQL 8.0.
+- Aplicação das regras de normalização até a 3ª Forma Normal (3FN).
+- Construção dos scripts SQL DDL (`schema.sql`) e DML na pasta `/database/`.
+- Garantia de integridade referencial, chaves estrangeiras e índices.
 
-- modelo conceitual;
-- DER;
-- modelo lógico;
-- normalização;
-- modelo físico;
-- scripts SQL;
-- análise de NoSQL;
-- validação da coerência entre banco e sistema.
-
-A modelagem deverá considerar as informações e regras atuais relacionadas às vendas, incluindo:
-
-- valor da venda;
-- valor de custo;
-- situação de pagamento ou faturamento;
-- situação de retirada;
-- confirmação da baixa;
-- comissões;
-- pagamentos.
-
-**Status:** Planejada
-
-[Ver Sprint 07](sprint-07.md)
+📄 [Ver Detalhes da Sprint 07](sprint-07.md)
 
 ---
 
 # Sprint 08 — Programação Estruturada em C
 
-Etapa planejada para implementação das funcionalidades selecionadas utilizando Programação Estruturada.
+Desenvolvimento do software executável no terminal.
 
-Principais atividades previstas:
+**Principais Atividades:**
+- Construção da aplicação em Linguagem C11 para execução no terminal, integrada ao MySQL via `mysql.h`.
+- Implementação dos módulos `vendas`, `financeiro`, `administrador`, `autenticacao` e `calculos`.
+- Implementação de segurança com `mysql_real_escape_string()` contra SQL Injection.
+- Controle transacional com `mysql_autocommit()`, `commit`, `rollback` e `FOR UPDATE`.
+- Operações de precisão financeira em cêntimos (`long long`) para evitar erros de arredondamento.
 
-- seleção das funcionalidades;
-- algoritmos;
-- fluxogramas;
-- pseudocódigos;
-- implementação em C;
-- condicionais;
-- repetições;
-- funções;
-- vetores;
-- matrizes;
-- testes;
-- documentação dos resultados.
-
-As funcionalidades selecionadas deverão utilizar como referência a versão atual dos requisitos, regras de negócio e do Diagrama Estendido.
-
-**Status:** Planejada
-
-[Ver Sprint 08](sprint-08.md)
+📄 [Ver Detalhes da Sprint 08](sprint-08.md)
 
 ---
 
 # Sprint 09 — Disciplinas Complementares
 
-Etapa planejada para desenvolvimento das disciplinas complementares do PIM.
+Documentação técnica das disciplinas integradas do PIM II.
 
-Áreas:
+**Principais Atividades:**
+- **Pesquisa e Inovação:** Análise BPM do processo *AS-IS* vs. *TO-BE* (redução do tempo de fechamento de 2 dias para < 2 horas).
+- **Redes e Infraestrutura:** Topologia em estrela, endereçamento IP, segmentação em VLANs (`VLAN_SERVIDORES` no IP `192.168.30.10:3306`).
+- **Direitos Humanos e Inclusão:** Acessibilidade no terminal (compatibilidade com leitores NVDA/Orca) e conformidade com a LGPD.
 
-- Pesquisa Científica e Inovação;
-- Redes de Computadores e Sistemas Distribuídos;
-- Direitos Humanos, Inclusão e Segurança.
-
-**Status:** Planejada
-
-[Ver Sprint 09](sprint-09.md)
+📄 [Ver Detalhes da Sprint 09](sprint-09.md)
 
 ---
 
-# Sprint 10 — Integração, Revisão e Entrega Final
+# Sprint 10 — Diagramas de Sequência, Integração e Entrega Final
 
-Etapa final planejada para integração e preparação da entrega.
+Consolidação da modelagem UML dinâmica e compilação final do PIM II.
 
-Principais atividades previstas:
+**Principais Atividades:**
+- Elaboração e inclusão dos **4 Diagramas de Sequência UML**:
+  1. *Autenticação e Login*
+  2. *Cadastro de Venda e Cálculo de Comissão*
+  3. *Conferência e Baixa Financeira*
+  4. *Pagamento e Quitação de Comissão*
+- Auditoria de rastreabilidade entre Código C, Scripts SQL e Documentação.
+- Compilação dos arquivos consolidados em DOCX e PDF nas normas ABNT.
 
-- integração das disciplinas;
-- revisão de coerência;
-- conclusão geral;
-- revisão da estrutura do documento;
-- revisão de formatação;
-- revisão das citações e referências;
-- revisão das permissões dos perfis;
-- revisão dos diagramas atuais;
-- verificação de originalidade;
-- geração do DOCX final;
-- geração do PDF final;
-- preparação da entrega.
-
-O conjunto atual de diagramas de Engenharia de Software a ser considerado na revisão final é:
-
-```text
-Diagrama de Casos de Uso
-Diagrama Estendido
-```
-
-**Status:** Planejada
-
-[Ver Sprint 10](sprint-10.md)
+📄 [Ver Detalhes da Sprint 10](sprint-10.md)
 
 ---
 
-## Evolução do projeto
-
-A evolução geral pode ser representada da seguinte forma:
+## Evolução Temporal do Projeto
 
 ```text
-Sprint 01
-Definição do projeto
-        ↓
-Sprint 02
-Requisitos e planejamento
-        ↓
-Sprint 03
-Modelagem inicial
-        ↓
-Sprint 04
-Refinamento das regras e fluxo
-        ↓
-Sprint 05
-Consolidação da modelagem
-        ↓
-Sprint 06
-GitHub, Scrum e refinamentos atuais
-        ↓
-Sprint 07
-Banco de Dados
-        ↓
-Sprint 08
-Programação em C
-        ↓
-Sprint 09
-Disciplinas complementares
-        ↓
-Sprint 10
-Integração e entrega final
+Sprint 01: Definição do Projeto (Hitek)
+   │
+   ├──► Sprint 02: Requisitos e Backlog
+   │
+   ├──► Sprint 03: Modelagem Inicial (Casos de Uso / MER)
+   │
+   ├──► Sprint 04: Refinamento de Regras & Diagrama de Atividade
+   │
+   ├──► Sprint 05: Diagrama Estendido & Módulos Funcionais
+   │
+   ├──► Sprint 06: Padronização Scrum, GitHub & Permissões do PO
+   │
+   ├──► Sprint 07: Banco de Dados Relacional MySQL (3FN)
+   │
+   ├──► Sprint 08: Aplicação Executável no Terminal em C
+   │
+   ├──► Sprint 09: Pesquisa BPM, Infraestrutura de Redes & LGPD
+   │
+   └──► Sprint 10: 4 Diagramas de Sequência & Entrega Final ABNT
 ```
 
 ---
 
-## Artefatos históricos e atuais
+## Conjunto Atual de Diagramas de Engenharia de Software
 
-Alguns artefatos utilizados durante o desenvolvimento deixaram de fazer parte do conjunto atual do projeto.
+Atualmente, o repositório mantém o conjunto completo de diagramas UML atualizados:
 
-Isso não significa que seu histórico deva ser apagado das Sprints anteriores.
+1. **Diagrama de Casos de Uso:** Mapeamento de atores e escopo por perfil (RBAC).
+2. **Diagrama Estendido:** Mapeamento de módulos e funções em Linguagem C.
+3. **Diagramas de Sequência (4 fluxos):**
+   - *Autenticação e Login*
+   - *Cadastro de Venda e Comissão*
+   - *Baixa Financeira*
+   - *Pagamento e Quitação*
 
-### Histórico
-
-Nas Sprints 04 e 05 foi desenvolvido e revisado um:
-
-```text
-Diagrama de Atividade
-```
-
-Por representar uma etapa real da evolução do projeto, essas referências permanecem nos registros históricos.
-
-### Situação atual
-
-Atualmente, os diagramas de Engenharia de Software mantidos no projeto são:
-
-```text
-Diagrama de Casos de Uso
-Diagrama Estendido
-```
-
-O Diagrama de Atividade não faz mais parte do conjunto atual de diagramas mantidos no repositório.
+> *Nota:* O Diagrama de Atividade utilizado nas Sprints 04 e 05 permanece registrado unicamente no histórico das respectivas Sprints, tendo sido descontinuado do conjunto principal de diagramas em favor dos Diagramas de Sequência.
 
 ---
 
-## Preservação do histórico
+## Preservação do Histórico
 
-As Sprints concluídas devem representar aquilo que estava definido no momento em que cada etapa foi realizada.
-
-Por esse motivo, alterações posteriores não devem ser inseridas retroativamente nas Sprints antigas como se já existissem.
-
-Exemplo:
-
-```text
-Sprint 05
-Módulo VENDAS ainda não possuía:
-alterarSituacaoVenda()
-alterarValorVenda()
-
-        ↓
-
-Sprint 06
-Product Owner solicita o refinamento
-
-        ↓
-
-Versão atual
-Módulo VENDAS passa a possuir:
-alterarSituacaoVenda()
-alterarValorVenda()
-```
-
-Essa separação permite manter:
-
-- histórico fiel do desenvolvimento;
-- versão atual coerente;
-- rastreabilidade das mudanças.
+As Sprints concluídas preservam o registro fiel das decisões tomadas em cada momento do projeto. Alterações posteriores solicitadas pelo PO (como as novas permissões do perfil Vendedor na Sprint 06) são registradas a partir da Sprint em que foram introduzidas, mantendo a rastreabilidade histórica do produto.
 
 ---
 
-## Observação
-
-A divisão das etapas iniciais em Sprints foi formalizada posteriormente com base na ordem real das atividades registradas durante o desenvolvimento.
-
-Por esse motivo, as primeiras Sprints não possuem necessariamente um período formal previamente definido.
-
-As Sprints futuras deverão ser atualizadas conforme as atividades forem efetivamente realizadas.
-
----
-
-## Arquivos
-
-```text
-sprints/
-├── README.md
-├── sprint-01.md
-├── sprint-02.md
-├── sprint-03.md
-├── sprint-04.md
-├── sprint-05.md
-├── sprint-06.md
-├── sprint-07.md
-├── sprint-08.md
-├── sprint-09.md
-└── sprint-10.md
-```
-
----
-
-## Documentação relacionada
-
-- [Scrum](../README.md)
-- [Product Backlog](../product-backlog.md)
-- [User Stories](../user-stories.md)
-- [Definition of Done](../definition-of-done.md)
-- [README principal](../../README.md)
-
----
-
-[← Voltar para Scrum](../README.md)
+[← Voltar para a pasta Scrum](../README.md)
