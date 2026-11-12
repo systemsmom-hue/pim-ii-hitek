@@ -36,15 +36,15 @@ Nesta Sprint deverão ser desenvolvidos os demais elementos necessários para es
 
 | ID | Atividade | Status |
 |---|---|---|
-| SP09-01 | Formular formalmente o problema de pesquisa | ⚪ Pendente |
-| SP09-02 | Explicar a metodologia de pesquisa utilizada | ⚪ Pendente |
-| SP09-03 | Realizar levantamento bibliográfico com fontes confiáveis | ⚪ Pendente |
-| SP09-04 | Desenvolver a fundamentação teórica | ⚪ Pendente |
-| SP09-05 | Analisar trabalhos, sistemas ou soluções relacionadas | ⚪ Pendente |
-| SP09-06 | Apresentar a justificativa científica da solução | ⚪ Pendente |
-| SP09-07 | Identificar os diferenciais inovadores da proposta | ⚪ Pendente |
-| SP09-08 | Inserir corretamente as citações utilizadas | ⚪ Pendente |
-| SP09-09 | Conferir correspondência entre citações e referências | ⚪ Pendente |
+| SP09-01 | Formular formalmente o problema de pesquisa | ✅ Concluído |
+| SP09-02 | Explicar a metodologia de pesquisa utilizada | ✅ Concluído |
+| SP09-03 | Realizar levantamento bibliográfico com fontes confiáveis | ✅ Concluído|
+| SP09-04 | Desenvolver a fundamentação teórica | ✅ Concluído |
+| SP09-05 | Analisar trabalhos, sistemas ou soluções relacionadas | ✅ Concluído |
+| SP09-06 | Apresentar a justificativa científica da solução | ✅ Concluído |
+| SP09-07 | Identificar os diferenciais inovadores da proposta | ✅ Concluído |
+| SP09-08 | Inserir corretamente as citações utilizadas | ✅ Concluído |
+| SP09-09 | Conferir correspondência entre citações e referências | ✅ Concluído |
 
 ---
 
