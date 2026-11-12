@@ -24,24 +24,24 @@ Consolidar todo o projeto em uma versão final coerente, revisada e pronta para 
 
 | ID | Atividade | Status |
 |---|---|---|
-| SP10-01 | Explicar a integração entre os componentes do projeto | ⚪ Pendente |
-| SP10-02 | Demonstrar a integração entre software, banco de dados e infraestrutura | ⚪ Pendente |
-| SP10-03 | Demonstrar a integração entre as disciplinas do PIM | ⚪ Pendente |
-| SP10-04 | Apresentar os benefícios esperados para a organização | ⚪ Pendente |
-| SP10-05 | Apresentar as limitações do projeto | ⚪ Pendente |
-| SP10-06 | Apresentar possibilidades de evolução futura | ⚪ Pendente |
-| SP10-07 | Elaborar a conclusão geral | ⚪ Pendente |
-| SP10-08 | Consolidar o documento final | ⚪ Pendente |
-| SP10-09 | Revisar a estrutura obrigatória do documento | ⚪ Pendente |
-| SP10-10 | Revisar a introdução | ⚪ Pendente |
-| SP10-11 | Revisar a formatação geral | ⚪ Pendente |
-| SP10-12 | Revisar citações e referências | ⚪ Pendente |
-| SP10-13 | Revisar figuras, tabelas e diagramas | ⚪ Pendente |
-| SP10-14 | Revisar originalidade e possíveis problemas de plágio | ⚪ Pendente |
-| SP10-15 | Revisar coerência entre todos os artefatos | ⚪ Pendente |
-| SP10-16 | Gerar a versão final em DOCX | ⚪ Pendente |
-| SP10-17 | Gerar a versão final em PDF | ⚪ Pendente |
-| SP10-18 | Armazenar a versão definitiva na pasta de entrega | ⚪ Pendente |
+| SP10-01 | Explicar a integração entre os componentes do projeto |✅ Concluído|
+| SP10-02 | Demonstrar a integração entre software, banco de dados e infraestrutura | ✅ Concluído |
+| SP10-03 | Demonstrar a integração entre as disciplinas do PIM | ✅ Concluído|
+| SP10-04 | Apresentar os benefícios esperados para a organização | ✅ Concluído |
+| SP10-05 | Apresentar as limitações do projeto | ✅ Concluído|
+| SP10-06 | Apresentar possibilidades de evolução futura | ✅ Concluído |
+| SP10-07 | Elaborar a conclusão geral | ✅ Concluído|
+| SP10-08 | Consolidar o documento final | ✅ Concluído|
+| SP10-09 | Revisar a estrutura obrigatória do documento | ✅ Concluído |
+| SP10-10 | Revisar a introdução | ✅ Concluído|
+| SP10-11 | Revisar a formatação geral | ✅ Concluído |
+| SP10-12 | Revisar citações e referências | ✅ Concluído |
+| SP10-13 | Revisar figuras, tabelas e diagramas | ✅ Concluído |
+| SP10-14 | Revisar originalidade e possíveis problemas de plágio | ✅ Concluído |
+| SP10-15 | Revisar coerência entre todos os artefatos | ✅ Concluído |
+| SP10-16 | Gerar a versão final em DOCX | ✅ Concluído |
+| SP10-17 | Gerar a versão final em PDF | ✅ Concluído |
+| SP10-18 | Armazenar a versão definitiva na pasta de entrega | ✅ Concluído |
 
 ---
 
