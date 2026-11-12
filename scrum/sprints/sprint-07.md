@@ -24,26 +24,26 @@ Desenvolver e validar a modelagem completa do banco de dados do sistema, garanti
 
 | ID | Atividade | Status |
 |---|---|---|
-| SP07-01 | Revisar a modelagem inicial existente | ⚪ Pendente |
-| SP07-02 | Definir as entidades definitivas | ⚪ Pendente |
-| SP07-03 | Definir os atributos das entidades | ⚪ Pendente |
-| SP07-04 | Definir as chaves primárias | ⚪ Pendente |
-| SP07-05 | Definir as chaves estrangeiras | ⚪ Pendente |
-| SP07-06 | Definir os relacionamentos | ⚪ Pendente |
-| SP07-07 | Definir as cardinalidades | ⚪ Pendente |
-| SP07-08 | Desenvolver e validar o modelo conceitual | ⚪ Pendente |
-| SP07-09 | Desenvolver o DER | ⚪ Pendente |
-| SP07-10 | Desenvolver o modelo lógico | ⚪ Pendente |
-| SP07-11 | Realizar a normalização | ⚪ Pendente |
-| SP07-12 | Documentar a normalização | ⚪ Pendente |
-| SP07-13 | Desenvolver o modelo físico | ⚪ Pendente |
-| SP07-14 | Criar os scripts SQL | ⚪ Pendente |
-| SP07-15 | Criar comandos de inserção de dados para testes | ⚪ Pendente |
-| SP07-16 | Criar consultas SQL relevantes | ⚪ Pendente |
-| SP07-17 | Avaliar a utilização de NoSQL | ⚪ Pendente |
-| SP07-18 | Justificar a utilização ou não de NoSQL | ⚪ Pendente |
-| SP07-19 | Conferir coerência entre banco de dados e regras de negócio | ⚪ Pendente |
-| SP07-20 | Conferir coerência entre banco de dados e diagramas | ⚪ Pendente |
+| SP07-01 | Revisar a modelagem inicial existente | ✅ Concluído |
+| SP07-02 | Definir as entidades definitivas | ✅ Concluído |
+| SP07-03 | Definir os atributos das entidades | ✅ Concluído |
+| SP07-04 | Definir as chaves primárias | ✅ Concluído |
+| SP07-05 | Definir as chaves estrangeiras | ✅ Concluído |
+| SP07-06 | Definir os relacionamentos |✅ Concluído |
+| SP07-07 | Definir as cardinalidades | ✅ Concluído |
+| SP07-08 | Desenvolver e validar o modelo conceitual | ✅ Concluído |
+| SP07-09 | Desenvolver o DER | ✅ Concluído |
+| SP07-10 | Desenvolver o modelo lógico | ✅ Concluído |
+| SP07-11 | Realizar a normalização | ✅ Concluído |
+| SP07-12 | Documentar a normalização | ✅ Concluído |
+| SP07-13 | Desenvolver o modelo físico | ✅ Concluído |
+| SP07-14 | Criar os scripts SQL | ✅ Concluído |
+| SP07-15 | Criar comandos de inserção de dados para testes | ✅ Concluído |
+| SP07-16 | Criar consultas SQL relevantes | ✅ Concluído |
+| SP07-17 | Avaliar a utilização de NoSQL | ✅ Concluído |
+| SP07-18 | Justificar a utilização ou não de NoSQL | ✅ Concluído|
+| SP07-19 | Conferir coerência entre banco de dados e regras de negócio | ✅ Concluído |
+| SP07-20 | Conferir coerência entre banco de dados e diagramas | ✅ Concluído |
 
 ---
 
