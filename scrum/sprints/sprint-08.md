@@ -24,20 +24,20 @@ Selecionar e implementar em linguagem C funcionalidades representativas do siste
 
 | ID | Atividade | Status |
 |---|---|---|
-| SP08-01 | Selecionar as principais funcionalidades para representação em C | ⚪ Pendente |
-| SP08-02 | Desenvolver os algoritmos das funcionalidades escolhidas | ⚪ Pendente |
-| SP08-03 | Criar os fluxogramas | ⚪ Pendente |
-| SP08-04 | Criar os pseudocódigos | ⚪ Pendente |
-| SP08-05 | Implementar as funcionalidades em linguagem C | ⚪ Pendente |
-| SP08-06 | Utilizar estruturas condicionais | ⚪ Pendente |
-| SP08-07 | Utilizar estruturas de repetição | ⚪ Pendente |
-| SP08-08 | Utilizar funções | ⚪ Pendente |
-| SP08-09 | Utilizar vetores | ⚪ Pendente |
-| SP08-10 | Utilizar matrizes | ⚪ Pendente |
-| SP08-11 | Avaliar a necessidade de manipulação de arquivos | ⚪ Pendente |
-| SP08-12 | Realizar testes das funcionalidades implementadas | ⚪ Pendente |
-| SP08-13 | Apresentar e explicar os resultados obtidos | ⚪ Pendente |
-| SP08-14 | Conferir a coerência entre fluxograma, pseudocódigo, código e resultado | ⚪ Pendente |
+| SP08-01 | Selecionar as principais funcionalidades para representação em C | ✅ Concluído |
+| SP08-02 | Desenvolver os algoritmos das funcionalidades escolhidas | ✅ Concluído |
+| SP08-03 | Criar os fluxogramas | ✅ Concluído |
+| SP08-04 | Criar os pseudocódigos | ✅ Concluído |
+| SP08-05 | Implementar as funcionalidades em linguagem C | ✅ Concluído |
+| SP08-06 | Utilizar estruturas condicionais | ✅ Concluído |
+| SP08-07 | Utilizar estruturas de repetição | ✅ Concluído |
+| SP08-08 | Utilizar funções |✅ Concluído|
+| SP08-09 | Utilizar vetores | ✅ Concluído |
+| SP08-10 | Utilizar matrizes | ✅ Concluído |
+| SP08-11 | Avaliar a necessidade de manipulação de arquivos | ✅ Concluído |
+| SP08-12 | Realizar testes das funcionalidades implementadas | ✅ Concluído |
+| SP08-13 | Apresentar e explicar os resultados obtidos | ✅ Concluído |
+| SP08-14 | Conferir a coerência entre fluxograma, pseudocódigo, código e resultado | ✅ Concluído |
 
 ---
 
