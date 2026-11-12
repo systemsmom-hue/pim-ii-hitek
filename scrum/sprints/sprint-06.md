@@ -52,14 +52,14 @@ Organizar os artefatos já desenvolvidos em um repositório GitHub, formalizar a
 | SP06-22 | Revisar e organizar o Product Backlog | ✅ Concluído |
 | SP06-23 | Criar as User Stories | ✅ Concluído |
 | SP06-24 | Definir a Definition of Done | ✅ Concluído |
-| SP06-25 | Reconstruir o histórico das Sprints com base na evolução real do projeto | 🟡 Em andamento |
-| SP06-26 | Preparar a área de implementação em C | 🟡 Em andamento |
-| SP06-27 | Preparar a estrutura de scripts do banco de dados | ⚪ Pendente |
-| SP06-28 | Revisar todos os links internos do repositório | ⚪ Pendente |
-| SP06-29 | Realizar revisão geral da estrutura do GitHub | ⚪ Pendente |
+| SP06-25 | Reconstruir o histórico das Sprints com base na evolução real do projeto |✅ Concluído |
+| SP06-26 | Preparar a área de implementação em C | ✅ Concluído |
+| SP06-27 | Preparar a estrutura de scripts do banco de dados | ✅ Concluído |
+| SP06-28 | Revisar todos os links internos do repositório | ✅ Concluído |
+| SP06-29 | Realizar revisão geral da estrutura do GitHub | ✅ Concluído|
 | SP06-30 | Registrar refinamento solicitado pelo Product Owner em 06/10/2026 | ✅ Concluído |
-| SP06-31 | Atualizar os artefatos afetados pelo refinamento do Product Owner | 🟡 Em andamento |
-| SP06-32 | Atualizar os diagramas finais no repositório | 🟡 Em andamento |
+| SP06-31 | Atualizar os artefatos afetados pelo refinamento do Product Owner | ✅ Concluído |
+| SP06-32 | Atualizar os diagramas finais no repositório | ✅ Concluído |
 
 ---
 
