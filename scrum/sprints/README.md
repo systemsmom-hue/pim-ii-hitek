@@ -13,7 +13,7 @@ A organização reflete o desenvolvimento real e incremental do projeto, desde a
 | **Sprint 01** | Definição Inicial do Projeto | ✅ Concluída | Escopo, problema, solução Hitek e objetivos do PIM II |
 | **Sprint 02** | Requisitos e Planejamento | ✅ Concluída | Requisitos (RF/RNF), Regras de Negócio e Product Backlog |
 | **Sprint 03** | Modelagem Inicial do Sistema | ✅ Concluída | 1ª versão do Casos de Uso e Modelo Entidade-Relacionamento |
-| **Sprint 04** | Refinamento de Regras e Fluxo | ✅ Concluída | Estados da comissão, faturamento, retirada e Diagrama de Atividade |
+| **Sprint 04** | Refinamento de Regras e Fluxo | ✅ Concluída | Estados da comissão, faturamento, retirada de equipamento|
 | **Sprint 05** | Consolidação Funcional | ✅ Concluída | Diagrama Estendido, módulos C, tratamento de pagamentos parciais |
 | **Sprint 06** | Gestão Scrum e GitHub | ✅ Concluída | Estruturação do repositório, User Stories, DoD e refinamento do PO |
 | **Sprint 07** | Banco de Dados Relacional | ✅ Concluída | Conceitual, Lógico, Físico, 3FN e scripts DDL/DML MySQL (`schema.sql`) |
